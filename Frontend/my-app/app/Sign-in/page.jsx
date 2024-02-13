@@ -26,7 +26,16 @@ const SignIn = () => {
       console.error(e)}
       alert("sign in succesfully")
   };
-
+  const handleGoogleSignUp = async () => {
+    try {
+      const res = await signInWithGoogle(GoogleProvider);
+      console.log({ res });
+      sessionStorage.setItem('user', true);
+      router.push('/');
+    } catch (e) {
+      console.error(e);
+    }
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div className="bg-gray-800 p-10 rounded-lg shadow-xl w-96">
