@@ -12,14 +12,13 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
+import Link from 'next/link'; // Import Link from Next.js
+import { useRouter } from 'next/navigation';
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+  const router = useRouter();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -34,7 +33,10 @@ export default function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  const handleNavigateToAbout = () => {
+    router.push('/aboutus'); // Navigate to About page using router
+    handleCloseNavMenu(); // Close the menu after navigation
+  };
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -87,11 +89,19 @@ export default function Navbar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+            <MenuItem onClick={handleNavigateToAbout}> {/* Use handleNavigateToAbout instead of handleCloseNavMenu */}
+                <Typography textAlign="center">About</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link href="/pricing" passHref> {/* Link to Pricing page */}
+                  <Typography textAlign="center">Pricing</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link href="/blog" passHref> {/* Link to Blog page */}
+                  <Typography textAlign="center">Blog</Typography>
+                </Link>
+              </MenuItem>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -114,15 +124,30 @@ export default function Navbar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              <Link href="/about" passHref> {/* Link to About page */}
+                About
+              </Link>
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              <Link href="/pricing" passHref> {/* Link to Pricing page */}
+                Pricing
+              </Link>
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              <Link href="/blog" passHref> {/* Link to Blog page */}
+                Blog
+              </Link>
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
