@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import {useAuthState} from 'react-firebase-hooks/auth'
 import {auth} from '@/app/firebase/config'
 import { useRouter } from 'next/navigation';
@@ -23,9 +22,9 @@ export default function Home() {
         signOut(auth)
         sessionStorage.removeItem('user')
         }}>
-        Log out
+        Log out 
       </button>
-     
+
     </main>
   )
 }
