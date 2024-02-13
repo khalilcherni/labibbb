@@ -5,6 +5,7 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import {GoogleProvider } from '@/app/firebase/config'
 import {auth} from '@/app/firebase/config'
 import { useRouter } from 'next/navigation';
+
 import './singup.css'
 const SignUp = () => {
   const [email, setEmail] = useState('');

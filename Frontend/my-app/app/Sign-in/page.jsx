@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import {GoogleProvider } from '@/app/firebase/config'
+import video from "../video/khlil.mp4"
 import { auth } from '@/app/firebase/config';
 import { useRouter } from 'next/navigation';
 
@@ -38,6 +39,9 @@ const SignIn = () => {
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
+       <video id="background-video" autoPlay loop muted>
+        <source src={video} type="video/mp4" />
+      </video>
       <div className="bg-gray-800 p-10 rounded-lg shadow-xl w-96">
         <h1 className="text-white text-2xl mb-5">Sign In</h1>
         <input
