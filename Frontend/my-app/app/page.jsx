@@ -23,7 +23,7 @@ export default function Home() {
         signOut(auth)
         sessionStorage.removeItem('user')
         }}>
-        Log out
+        Log out 
       </button>
      
     </main>

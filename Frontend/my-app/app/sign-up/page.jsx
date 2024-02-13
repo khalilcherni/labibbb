@@ -30,7 +30,7 @@ const SignUp = () => {
       const res = await signInWithGoogle(GoogleProvider);
       console.log({ res });
       sessionStorage.setItem('user', true);
-      router.push('/sign-in');
+      router.push('/');
     } catch (e) {
       console.error(e);
     }
@@ -62,9 +62,9 @@ const SignUp = () => {
         </button>
         <button
           onClick={handleGoogleSignUp}
-          className="w-full p-3 bg-blue-600 rounded text-white hover:bg-blue-500 mt-4"
+         
         >
-          Sign Up with Google
+<img src="https://img.icons8.com/?size=80&id=6QtoKjRma1Cq&format=png" alt="" />
         </button>
       </div>
     </div>
