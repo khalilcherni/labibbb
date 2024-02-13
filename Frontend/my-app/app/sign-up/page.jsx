@@ -19,7 +19,7 @@ const SignUp = () => {
     } catch(e){
         console.error(e)
     }
-    alert("sign")
+    alert("sign up succesfully")
   };
 
   return (

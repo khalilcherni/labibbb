@@ -20,13 +20,8 @@ const SignIn = () => {
       setPassword('');
       router.push('/');
     } catch (e) {
-      console.error(e);
-      if (e.code === 'auth/email-already-in-use') {
-        alert('Email already exists');
-      } else {
-        alert('Sign-in unsuccessful. Please try again.');
-      }
-    }
+      console.error(e)}
+      alert("sign in succesfully")
   };
 
   return (
