@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react';
 import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth'
-import { useSignInWithFacebook } from 'react-firebase-hooks/auth'
-import { facebookProvider } from '@/app/firebase/config'
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import {GoogleProvider } from '@/app/firebase/config'
 import {auth} from '@/app/firebase/config'
 import { useRouter } from 'next/navigation';
 
@@ -10,7 +10,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
-  const [signInWithFacebook] = useSignInWithFacebook(auth);
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
   const router = useRouter();
   const handleSignUp = async () => {
     try {
@@ -25,9 +25,9 @@ const SignUp = () => {
     }
     alert("sign up succesfully")
   };
-  const handleFacebookSignUp = async () => {
+  const handleGoogleSignUp = async () => {
     try {
-      const res = await signInWithFacebook(facebookProvider);
+      const res = await signInWithGoogle(GoogleProvider);
       console.log({ res });
       sessionStorage.setItem('user', true);
       router.push('/sign-in');
@@ -61,10 +61,10 @@ const SignUp = () => {
           Sign Up
         </button>
         <button
-          onClick={handleFacebookSignUp}
+          onClick={handleGoogleSignUp}
           className="w-full p-3 bg-blue-600 rounded text-white hover:bg-blue-500 mt-4"
         >
-          Sign Up with Facebook
+          Sign Up with Google
         </button>
       </div>
     </div>
