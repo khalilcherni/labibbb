@@ -1,6 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import {GoogleProvider } from '@/app/firebase/config'
 import { auth } from '@/app/firebase/config';
 import { useRouter } from 'next/navigation';
 
@@ -8,6 +10,7 @@ const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
   const router = useRouter();
 
   const handleSignIn = async () => {
