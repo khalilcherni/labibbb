@@ -60,6 +60,12 @@ const SignIn = () => {
         >
           Sign In
         </button>
+        <button 
+          onClick={handleGoogleSignUp}
+          className="google-btn"
+        >
+          <img src="https://img.icons8.com/?size=80&id=6QtoKjRma1Cq&format=png" alt="" />
+        </button>
       </div>
     </div>
   );
