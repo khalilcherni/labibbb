@@ -3,7 +3,7 @@ import {useAuthState} from 'react-firebase-hooks/auth'
 import {auth} from '@/app/firebase/config'
 import { useRouter } from 'next/navigation';
 import { signOut } from 'firebase/auth';
-
+import Navbar from "./Navbar/page"
 export default function Home() {
   const [user] = useAuthState(auth);
   const router = useRouter()
@@ -17,13 +17,15 @@ export default function Home() {
   
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <button onClick={() => {
+    <main>
+        <button onClick={() => {
         signOut(auth)
         sessionStorage.removeItem('user')
         }}>
         Log out 
       </button>
+      <Navbar/>
+    
 
     </main>
   )

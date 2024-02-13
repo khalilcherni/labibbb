@@ -1,6 +1,9 @@
 'use client';
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import {GoogleProvider } from '@/app/firebase/config'
+
 import { auth } from '@/app/firebase/config';
 import { useRouter } from 'next/navigation';
 
@@ -8,6 +11,7 @@ const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
   const router = useRouter();
 
   const handleSignIn = async () => {
@@ -23,9 +27,20 @@ const SignIn = () => {
       console.error(e)}
       alert("sign in succesfully")
   };
-
+  const handleGoogleSignUp = async () => {
+    try {
+      const res = await signInWithGoogle(GoogleProvider);
+      console.log({ res });
+      sessionStorage.setItem('user', true);
+      router.push('/');
+    } catch (e) {
+      console.error(e);
+    }
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
+
+
       <div className="bg-gray-800 p-10 rounded-lg shadow-xl w-96">
         <h1 className="text-white text-2xl mb-5">Sign In</h1>
         <input
@@ -47,6 +62,12 @@ const SignIn = () => {
           className="w-full p-3 bg-indigo-600 rounded text-white hover:bg-indigo-500"
         >
           Sign In
+        </button>
+        <button 
+          onClick={handleGoogleSignUp}
+          className="google-btn"
+        >
+          <img src="https://img.icons8.com/?size=80&id=6QtoKjRma1Cq&format=png" alt="" />
         </button>
       </div>
     </div>
