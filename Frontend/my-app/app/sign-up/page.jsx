@@ -1,6 +1,8 @@
 'use client'
 import { useState } from 'react';
 import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth'
+import { useSignInWithFacebook } from 'react-firebase-hooks/auth'
+import { facebookProvider } from '@/app/firebase/config'
 import {auth} from '@/app/firebase/config'
 import { useRouter } from 'next/navigation';
 
@@ -8,6 +10,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
+  const [signInWithFacebook] = useSignInWithFacebook(auth);
   const router = useRouter();
   const handleSignUp = async () => {
     try {
@@ -21,6 +24,16 @@ const SignUp = () => {
         console.error(e)
     }
     alert("sign up succesfully")
+  };
+  const handleFacebookSignUp = async () => {
+    try {
+      const res = await signInWithFacebook(facebookProvider);
+      console.log({ res });
+      sessionStorage.setItem('user', true);
+      router.push('/sign-in');
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
@@ -46,6 +59,12 @@ const SignUp = () => {
           className="w-full p-3 bg-indigo-600 rounded text-white hover:bg-indigo-500"
         >
           Sign Up
+        </button>
+        <button
+          onClick={handleFacebookSignUp}
+          className="w-full p-3 bg-blue-600 rounded text-white hover:bg-blue-500 mt-4"
+        >
+          Sign Up with Facebook
         </button>
       </div>
     </div>
