@@ -70,6 +70,9 @@ const SignIn = () => {
           <img src="https://img.icons8.com/?size=80&id=6QtoKjRma1Cq&format=png" alt="" />
         </button>
       </div>
+      <video id="background-video" autoPlay loop muted>
+        <source src="/khlil.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 };

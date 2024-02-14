@@ -1,10 +1,11 @@
 // pages/aboutus.jsx
-
+import Navbar from "../Navbar/page";
 import React from 'react';
 import './about.css'
 const AboutUs = () => {
   return (
     <div>
+      <Navbar/>
       <section className="about" id="about">
         <img
           className="coach_image"
