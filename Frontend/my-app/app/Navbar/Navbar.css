@@ -123,6 +123,22 @@
   .Button a:hover span::after {
     width: 100%;
   }
-  .az{
-    color: black;
-  }
+ /* Navbar.css */
+
+/* Styling for the navigation buttons */
+.az {
+  color: black; /* Text color */
+  font-size: 1rem; /* Font size */
+  text-decoration: none; /* Remove default underline */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Styling for the navigation buttons on hover */
+.az:hover {
+  color: rgb(91, 91, 99); /* Text color on hover */
+}
+
+/* If you want to remove the default underline only on hover */
+.az:hover {
+  text-decoration: none;
+}

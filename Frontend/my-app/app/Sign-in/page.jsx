@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import {GoogleProvider } from '@/app/firebase/config'
-
+import Profile from "../Profile/page"
 import { auth } from '@/app/firebase/config';
 import { useRouter } from 'next/navigation';
 import "./Signin.css"
@@ -24,6 +24,7 @@ const SignIn = () => {
       setPassword('');
       router.push('/');
       alert("Sign in successful");
+      
     } catch (e) {
       console.error(e);
       // If sign-in fails, try to sign in using stored credentials from local storage

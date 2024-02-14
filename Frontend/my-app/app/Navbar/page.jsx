@@ -14,12 +14,12 @@ function ResponsiveAppBar() {
   return (
     <AppBar className='kh' >
       <Toolbar>
-        <AdbIcon />
+       
         <Typography
       
         >
           <Link href="/" passHref>
-            LOGO
+      <h4 className='az'>Home</h4>
           </Link>
         </Typography>
 
@@ -36,12 +36,12 @@ function ResponsiveAppBar() {
           </Button>
           <Button >
             <Link href="/Profile" passHref>
-            <h4>Abzf</h4>
+            <h4 className='az'>Abzf</h4>
             </Link>
           </Button>
           <Button >
             <Link href="/profile" passHref>
-            <h4>Abfezf</h4>
+            <h4 className='az'>Abfezf</h4>
             </Link>
           </Button>
         </Box>
