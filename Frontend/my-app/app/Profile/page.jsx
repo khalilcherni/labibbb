@@ -2,9 +2,12 @@
 import React from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
 import "./Profile.css"
+import Navbar from "../Navbar/page";
 export default function PersonalProfile() {
   return (
-    <section className="vh-100" style={{ backgroundColor: '#f4f5f7' }}>
+   
+    <section className='ezdin'>
+       <Navbar/>
       <MDBContainer className="py-5 h-100">
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol lg="6" className="mb-4 mb-lg-0">
