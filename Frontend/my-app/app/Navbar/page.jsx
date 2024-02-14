@@ -35,7 +35,7 @@ function ResponsiveAppBar() {
             </Link>
           </Button>
           <Button >
-            <Link href="/profile" passHref>
+            <Link href="/Profile" passHref>
             <h4>Abzf</h4>
             </Link>
           </Button>
