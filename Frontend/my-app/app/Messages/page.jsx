@@ -1,4 +1,3 @@
-'use client'
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -19,6 +18,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import DeleteIcon from '@mui/icons-material/Delete';
 import Navbar from "../Navbar/page";
 
 const messagesData = JSON.parse(localStorage.getItem('messages')) || [
@@ -62,6 +62,12 @@ export default function BottomAppBar() {
     }
   };
 
+  const handleDeleteMessage = (id) => {
+    const updatedMessages = messages.filter(message => message.id !== id);
+    setMessages(updatedMessages);
+    localStorage.setItem('messages', JSON.stringify(updatedMessages));
+  };
+
   return (
     <React.Fragment>
       <Navbar/>
@@ -83,6 +89,13 @@ export default function BottomAppBar() {
                   <Avatar alt="Profile Picture" src={person} />
                 </ListItemAvatar>
                 <ListItemText primary={primary} secondary={secondary} />
+                <IconButton
+                  edge="end"
+                  aria-label="delete"
+                  onClick={() => handleDeleteMessage(id)}
+                >
+                  <DeleteIcon />
+                </IconButton>
               </ListItemButton>
             </React.Fragment>
           ))}
