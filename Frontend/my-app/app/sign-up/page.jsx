@@ -110,12 +110,12 @@ const SignUp = () => {
         </button>
         <button 
           onClick={handleGoogleSignUp}
-          className="google-btn"
+  
         >
-          <img src="https://img.icons8.com/?size=80&id=6QtoKjRma1Cq&format=png" alt="" />
+          <img className='ll' src="https://img.icons8.com/?size=80&id=6QtoKjRma1Cq&format=png" alt="" />
         </button>
       
-        <button onClick={() => router.push('/sign-in')} className="signin-link">Sign In</button>
+        <button onClick={() => router.push('/sign-in')} className="button-89">Sign In</button>
       </div>
     </div>
   );

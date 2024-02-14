@@ -83,18 +83,7 @@ background-color: rgb(252, 252, 252);
     background-color: #8a8d91;
   }
   
-  .google-btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
- 
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+
 
   
   .signin-link {
@@ -112,4 +101,7 @@ background-color: rgb(252, 252, 252);
   .signin-link:hover {
     color: #bbb;
   }
-  
+  .ll{
+    width: 50px;
+    
+  }
