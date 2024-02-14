@@ -101,7 +101,11 @@ background-color: rgb(252, 252, 252);
   .signin-link:hover {
     color: #bbb;
   }
-  .ll{
+
+  
+  .ll {
+    display: flex;
+    justify-content: center; 
     width: 80px;
-    
   }
+  
