@@ -1,7 +1,7 @@
 /* SignUp.css */
 .min-h-screen {
   /* Set the background image */
-background-color: rgb(207, 188, 163);
+background-color: rgb(252, 252, 252);
   /* Set background size to cover the entire screen */
   background-size: cover;
   /* Center the background image */
@@ -10,10 +10,14 @@ background-color: rgb(207, 188, 163);
   position: relative;
 }
 .signup-container {
-    background-color: #333;
+  width: 50%;
+    background-color: #817e7e;
     padding: 30px;
+    border-color: rgb(5, 5, 5);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: -50px;
+    margin-left: 350px;
   }
   
   .input-field {
