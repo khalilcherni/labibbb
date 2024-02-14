@@ -23,10 +23,31 @@ const SignIn = () => {
       setEmail('');
       setPassword('');
       router.push('/');
+      alert("Sign in successful");
     } catch (e) {
-      console.error(e)}
-      alert("sign in succesfully")
+      console.error(e);
+      // If sign-in fails, try to sign in using stored credentials from local storage
+      const storedEmail = localStorage.getItem('email');
+      const storedPassword = localStorage.getItem('password');
+      if (storedEmail && storedPassword) {
+        try {
+          const res = await signInWithEmailAndPassword(storedEmail, storedPassword);
+          console.log({ res });
+          sessionStorage.setItem('user', true);
+          setEmail('');
+          setPassword('');
+          router.push('/');
+          alert("Sign in successful using stored credentials");
+        } catch (error) {
+          console.error(error);
+          alert("Sign in failed. Please try again.");
+        }
+      } else {
+        alert("Sign in failed. Please try again.");
+      }
+    }
   };
+  
   const handleGoogleSignUp = async () => {
     try {
       const res = await signInWithGoogle(GoogleProvider);

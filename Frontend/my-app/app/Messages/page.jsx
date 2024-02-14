@@ -1,4 +1,4 @@
-'use client'
+'use client'  
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -104,19 +104,13 @@ export default function BottomAppBar() {
       </Paper>
       <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>
-          <IconButton color="inherit" aria-label="open drawer">
-            <MenuIcon />
-          </IconButton>
+          
           <StyledFab color="secondary" aria-label="add" onClick={handlePostMessage}>
             <AddIcon />
           </StyledFab>
-          <Box sx={{ flexGrow: 1 }} />
-          <IconButton color="inherit">
-            <SearchIcon />
-          </IconButton>
-          <IconButton color="inherit">
-            <MoreIcon />
-          </IconButton>
+  
+        
+        
         </Toolbar>
         {/** Input field for adding new messages */}
         <Box sx={{ p: 2 }}>
@@ -126,7 +120,7 @@ export default function BottomAppBar() {
             value={inputValue}
             onChange={handleInputChange}
           />
-          <button onClick={handlePostMessage}>Post</button>
+      
         </Box>
       </AppBar>
     </React.Fragment>
