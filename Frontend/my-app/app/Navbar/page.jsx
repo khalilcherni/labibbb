@@ -13,7 +13,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar className='kh' >
-      <Toolbar disableGutters>
+      <Toolbar>
         <AdbIcon />
         <Typography
       
@@ -26,17 +26,22 @@ function ResponsiveAppBar() {
         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           <Button>
             <Link href="/aboutus" passHref>
-            aboutus
+      <h4 className='az'>About Us</h4>
             </Link>
           </Button>
           <Button >
             <Link href="/pricing" passHref>
-              Pricing
+            <h4 className='az'>Abfzf</h4>
             </Link>
           </Button>
           <Button >
             <Link href="/profile" passHref>
-              Blog
+            <h4>Abzf</h4>
+            </Link>
+          </Button>
+          <Button >
+            <Link href="/profile" passHref>
+            <h4>Abfezf</h4>
             </Link>
           </Button>
         </Box>
