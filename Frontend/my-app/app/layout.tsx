@@ -2,7 +2,7 @@
 import React from 'react';
 import { Inter } from 'next/font/google';
 import { metadata } from '../next.config.mjs';
-import Navbar from './Navbar/page';
+// import Navbar from './Navbar/page';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +23,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children, pathname }) => {
         <meta name="description" content={metadata.description} />
       </head>
       <body className={inter.className}>
-        {showNavbar && <Navbar />}
+        {/* {showNavbar && <Navbar />} */}
     
         {children}
       </body>

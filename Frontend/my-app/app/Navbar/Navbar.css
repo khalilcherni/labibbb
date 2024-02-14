@@ -1,5 +1,128 @@
-.kh{
-    background-color: bisque;
-    margin-top: -10px;
-    margin-right: 100%;
-}
+/* Navbar.css */
+
+/* Styling for the Navbar */
+.kh {
+    background-color: rgba(22, 48, 48, 0.336); /* Transparent black background */
+  }
+  
+  /* Styling for the logo */
+  .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  /* Styling for the navigation buttons */
+  .nav-button {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  /* Styling for the user avatar */
+  .user-avatar {
+    padding: 0;
+  }
+  
+  /* Styling for the user menu */
+  .user-menu {
+    margin-top: 8px;
+  }
+  
+  /* Styling for the menu items in the user menu */
+  .menu-item {
+    text-align: center;
+    color: black;
+  }
+  
+  /* Styling for the menu item text */
+  .menu-item-text {
+    color: black;
+  }
+  /* Navbar.css */
+
+/* Styling for the navigation buttons */
+.Button {
+    background-color: transparent;
+    border: none;
+    color: #61dafb; /* Light blue color */
+    font-size: 1rem;
+    padding: 0;
+    margin: 0 10px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .Button::before,
+  .Button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #61dafb; /* Light blue color */
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .Button::after {
+    bottom: auto;
+    top: 0;
+  }
+  
+  .Button:hover::before,
+  .Button:hover::after {
+    transform: scaleX(1);
+  }
+  
+  /* Styling for the Link inside the Button */
+  .Button a {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px;
+    display: inline-block;
+  }
+  
+  /* Styling for the text inside the Link */
+  .Button a span {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Styling for the text's pseudo-elements */
+  .Button a span::before,
+  .Button a span::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: #61dafb; /* Light blue color */
+    transition: width 0.3s ease;
+  }
+  
+  /* Styling for the text's pseudo-element before */
+  .Button a span::before {
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  
+  /* Styling for the text's pseudo-element after */
+  .Button a span::after {
+    width: 0;
+    right: 50%;
+    bottom: 0;
+    transform: translateX(50%);
+  }
+  
+  /* Styling for the text on hover */
+  .Button a:hover span::before,
+  .Button a:hover span::after {
+    width: 100%;
+  }
+  .az{
+    color: black;
+  }

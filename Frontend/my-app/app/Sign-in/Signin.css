@@ -1,127 +1,76 @@
-
 /* Center the content vertically and horizontally */
 .min-h-screen {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Styling for the sign-in container */
-  .bg-gray-800 {
-    background-color: #2d3748; /* Dark gray background color */
-    padding: 2rem; /* Padding inside the container */
-    border-radius: 0.5rem; /* Rounded corners */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Shadow effect */
-    width: 24rem; /* Set a fixed width for the container */
-  }
-  
-  /* Styling for the sign-in header */
-  .text-white {
-    color: #fff; /* White text color */
-  }
-  
-  .text-2xl {
-    font-size: 1.5rem; /* Large font size */
-    margin-bottom: 1rem; /* Bottom margin */
-  }
-  
-  /* Styling for input fields */
-  input[type="email"],
-  input[type="password"] {
-    width: 100%; /* Full width */
-    padding: 0.75rem; /* Padding */
-    margin-bottom: 1rem; /* Bottom margin */
-    background-color: #4a5568; /* Dark gray background */
-    border: none; /* No border */
-    border-radius: 0.25rem; /* Rounded corners */
-    outline: none; /* Remove outline */
-    color: #cbd5e0; /* Text color */
-  }
-  
-  /* Placeholder text color */
-  ::placeholder {
-    color: #a0aec0;
-  }
-  
-  /* Styling for sign-in button */
-  button {
-    width: 100%; /* Full width */
-    padding: 0.75rem; /* Padding */
-    background-color: #4c51bf; /* Indigo background color */
-    border: none; /* No border */
-    border-radius: 0.25rem; /* Rounded corners */
-    color: #fff; /* White text color */
-    cursor: pointer; /* Cursor style */
-    transition: background-color 0.3s; 
-;/* Smooth transition for background color */
-  }
-  
-  /* Hover effect for sign-in button */
-  button:hover {
-    background-color: #434190; /* Darker indigo background color on hover */
-  }
-  
-  /* Styling for Google sign-in button */
-  .google-btn {
-    width: 100%; /* Full width */
-    padding: 0; /* No padding */
-    background-color: transparent; /* Transparent background */
-    border: none; /* No border */
-    cursor: pointer; /* Cursor style */
-  }
-  
-  /* Styling for Google sign-in button image */
-  .google-btn img {
-    width: 80px; /* Set width for the image */
-  }
-
-
-/* CSS */
-.button-59 {
+  display: flex;
   align-items: center;
-  background-color: #fff;
-  border: 2px solid #000;
-  box-sizing: border-box;
-  color: #000;
-  cursor: pointer;
-  display: inline-flex;
-  fill: #000;
-  font-family: Inter,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  height: 48px;
   justify-content: center;
-  letter-spacing: -.8px;
-  line-height: 24px;
-  min-width: 140px;
-  outline: 0;
-  padding: 0 17px;
-  text-align: center;
-  text-decoration: none;
-  transition: all .3s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  margin-top: 200px;
 }
 
-.button-59:focus {
-  color: #171e29;
+/* Styling for the sign-in container */
+.bg-gray-800 {
+  background-color: rgba(102, 91, 91, 0.5); /* Transparent dark gray background */
+  padding: 2rem; /* Padding inside the container */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Shadow effect */
+  width: 24rem; /* Set a fixed width for the container */
 }
 
-.button-59:hover {
-  border-color: #06f;
-  color: #06f;
-  fill: #06f;
+/* Styling for input fields */
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* Full width */
+  padding: 0.75rem; /* Padding */
+  margin-bottom: 1rem; /* Bottom margin */
+  background-color: rgba(74, 85, 104, 0.5); /* Transparent dark gray background */
+  border: none; /* No border */
+  border-radius: 0.25rem; /* Rounded corners */
+  outline: none; /* Remove outline */
+  color: #cbd5e0; /* Text color */
 }
 
-.button-59:active {
-  border-color: #06f;
-  color: #06f;
-  fill: #06f;
+/* Placeholder text color */
+::placeholder {
+  color: #a0aec0;
 }
 
-@media (min-width: 768px) {
-  .button-59 {
-    min-width: 170px;
-  }
+/* Styling for sign-in button */
+button {
+  width: 100%; /* Full width */
+  padding: 0.75rem; /* Padding */
+  background-color: rgba(76, 81, 191, 0.8); /* Transparent indigo background */
+  border: none; /* No border */
+  border-radius: 0.25rem; /* Rounded corners */
+  color: #fff; /* White text color */
+  cursor: pointer; /* Cursor style */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Hover effect for sign-in button */
+button:hover {
+  background-color: rgba(67, 65, 144, 0.8); /* Transparent darker indigo background on hover */
+}
+
+/* Styling for Google sign-in button */
+.google-btn {
+  width: 100%; /* Full width */
+  padding: 0; /* No padding */
+  background-color: transparent; /* Transparent background */
+  border: none; /* No border */
+  cursor: pointer; /* Cursor style */
+}
+
+/* Styling for Google sign-in button image */
+.google-btn img {
+  width: 80px; /* Set width for the image */
+}
+
+/* Styling for the background video */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure the video stays behind other content */
+  object-fit: cover; /* Cover the entire viewport */
 }
