@@ -104,7 +104,7 @@ const SignUp = () => {
         />
         <button 
           onClick={handleSignUp}
-          className="signup-btn"
+          className="button-89 " 
         >
           Sign Up
         </button>
