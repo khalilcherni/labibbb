@@ -9,6 +9,9 @@ background-color: rgb(252, 252, 252);
   /* Make sure content stays in front of the background image */
   position: relative;
 }
+.khalil{
+  color: #cbd5e0;
+}
 .signup-container {
   width: 50%;
   background-color: #2d3748;

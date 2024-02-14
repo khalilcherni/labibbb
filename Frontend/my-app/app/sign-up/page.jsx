@@ -66,7 +66,7 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div className="signup-container">
-        <h1 className="text-white text-2xl mb-5">Sign Up</h1>
+        <h1 className="khalil">Sign Up</h1>
         <input
           type="firstName"
           placeholder="First Name"
@@ -115,7 +115,7 @@ const SignUp = () => {
           <img className='ll'  onClick={handleGoogleSignUp} src="https://img.icons8.com/?size=80&id=6QtoKjRma1Cq&format=png" alt="" />
         
     
-        <button onClick={() => router.push('/sign-in')} className="button-89">Sign In</button>
+        <button onClick={() => router.push('/sign-in')} className="button-59 ">Sign In</button>
       </div>
     </div>
   );
