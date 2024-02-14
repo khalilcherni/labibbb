@@ -1,100 +1,10 @@
-/* Profile.css */
-
-/* Gradient background */
-.gradient-custom-2 {
-    background: linear-gradient(to right, #00d2ff, #3a7bd5);
-  }
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #c7c6c2;
   
-  /* Profile card styling */
-  .profile-card {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgb(165, 156, 126), rgba(253, 160, 133, 1));
   
-  /* Profile header */
-  .profile-header {
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    align-items: center;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgb(172, 161, 125), rgb(170, 147, 141))
   }
-  
-  .profile-header .profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
-  
-  .profile-header .profile-info {
-    flex: 1;
-  }
-  
-  .profile-header .profile-name {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .profile-header .profile-location {
-    font-size: 18px;
-  }
-  
-  /* Profile stats */
-  .profile-stats {
-    background-color: #f8f9fa;
-    padding: 20px;
-  }
-  
-  .profile-stats .stat-item {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .profile-stats .stat-number {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .profile-stats .stat-label {
-    font-size: 14px;
-    color: #6c757d;
-  }
-  
-  /* Profile about section */
-  .profile-about {
-    background-color: #f8f9fa;
-    padding: 20px;
-  }
-  
-  .profile-about p {
-    margin: 0;
-  }
-  
-  /* Recent photos */
-  .recent-photos {
-    padding: 20px;
-  }
-  
-  .recent-photos img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  /* Show all photos link */
-  .show-all-link {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .show-all-link a {
-    color: #6c757d;
-    text-decoration: none;
-  }
-  
-  .show-all-link a:hover {
-    text-decoration: underline;
-  }
-  

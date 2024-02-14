@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
-
+import "./Profile.css"
 export default function PersonalProfile() {
   return (
     <section className="vh-100" style={{ backgroundColor: '#f4f5f7' }}>
