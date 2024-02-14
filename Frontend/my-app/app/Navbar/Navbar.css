@@ -127,18 +127,48 @@
 
 /* Styling for the navigation buttons */
 .az {
-  color: black; /* Text color */
-  font-size: 1rem; /* Font size */
+  color: #3b3636; /* Text color */
   text-decoration: none; /* Remove default underline */
   transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
-/* Styling for the navigation buttons on hover */
+/* Styling for the navigation links on hover */
 .az:hover {
-  color: rgb(123, 123, 133); /* Text color on hover */
+  color: #000000; /* Text color on hover */
 }
 
-/* If you want to remove the default underline only on hover */
-.az:hover {
-  text-decoration: none;
+/* CSS */
+
+
+.button-16 {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+}
+
+.button-16:hover {
+  border-color: #dadce0;
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  color: #202124;
+}
+
+.button-16:focus {
+  border-color: #4285f4;
+  outline: none;
+}
+#lll{
+  margin-right: 20px;
 }

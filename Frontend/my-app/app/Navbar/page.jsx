@@ -5,7 +5,6 @@ import { AppBar, Box, Toolbar, IconButton, Typography, Menu, MenuItem, Avatar, B
 import { Menu as MenuIcon, Adb as AdbIcon } from '@mui/icons-material';
 import './Navbar.css'
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
  
@@ -18,7 +17,7 @@ function ResponsiveAppBar() {
         <Typography
       
         >
-          <Link className='az' href="/" passHref>
+          <Link className='az' id="lll" href="/" passHref>
     Home
           </Link>
         </Typography>
@@ -36,33 +35,16 @@ function ResponsiveAppBar() {
           </Button>
           <Button >
             <Link className='az'  href="/Profile" passHref>
-          Abzf
+         statistic
             </Link>
           </Button>
           <Button >
             <Link className='az'  href="/profile" passHref>
-           Abfezf
+          materiel  
             </Link>
           </Button>
         </Box>
 
-        <Box >
-          <Tooltip title="Open settings">
-            <IconButton >
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-            </IconButton>
-          </Tooltip>
-          <Menu
-           
-         
-          >
-            {settings.map((setting) => (
-              <MenuItem key={setting} >
-                <Typography textAlign="center">{setting}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
-        </Box>
       </Toolbar>
     </AppBar>
   );
