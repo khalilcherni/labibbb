@@ -6,7 +6,7 @@ import {GoogleProvider } from '@/app/firebase/config'
 
 import { auth } from '@/app/firebase/config';
 import { useRouter } from 'next/navigation';
-
+import "./Signin.css"
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
