@@ -30,20 +30,9 @@ function ResponsiveAppBar() {
   return (
     <AppBar className='kh' position="static">
       <Toolbar disableGutters>
-        <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <AdbIcon />
         <Typography
-          variant="h6"
-          noWrap
-          component="div"
-          sx={{
-            mr: 2,
-            display: { xs: 'none', md: 'flex' },
-            fontFamily: 'monospace',
-            fontWeight: 700,
-            letterSpacing: '.3rem',
-            color: 'inherit',
-            textDecoration: 'none',
-          }}
+      
         >
           <Link href="/" passHref>
             LOGO
@@ -51,26 +40,26 @@ function ResponsiveAppBar() {
         </Typography>
 
         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          <Button sx={{ my: 2, color: 'white' }}>
+          <Button>
             <Link href="/aboutus" passHref>
             aboutus
             </Link>
           </Button>
-          <Button sx={{ my: 2, color: 'white' }}>
+          <Button >
             <Link href="/pricing" passHref>
               Pricing
             </Link>
           </Button>
-          <Button sx={{ my: 2, color: 'white' }}>
-            <Link href="/Profile" passHref>
+          <Button >
+            <Link href="/profile" passHref>
               Blog
             </Link>
           </Button>
         </Box>
 
-        <Box sx={{ flexGrow: 0 }}>
+        <Box >
           <Tooltip title="Open settings">
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+            <IconButton onClick={handleOpenUserMenu} >
               <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
             </IconButton>
           </Tooltip>
