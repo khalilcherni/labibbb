@@ -1,8 +1,9 @@
 import React from 'react';
-
+import Navbar from "../Navbar/page";
 function Profile() {
   return (
     <div className="gradient-custom-2" style={{ backgroundColor: '#9de2ff' }}>
+      <Navbar/>
       <div className="py-5 h-100">
         <div className="justify-content-center align-items-center h-100">
           <div className="lg-9 xl-7">
