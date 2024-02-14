@@ -14,34 +14,34 @@ function ResponsiveAppBar() {
   return (
     <AppBar className='kh' >
       <Toolbar>
-       
+      
         <Typography
       
         >
-          <Link href="/" passHref>
-      <h4 className='az'>Home</h4>
+          <Link className='az' href="/" passHref>
+    Home
           </Link>
         </Typography>
 
         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           <Button>
-            <Link href="/aboutus" passHref>
-      <h4 className='az'>About Us</h4>
+            <Link className='az' href="/aboutus" passHref>
+     About
             </Link>
           </Button>
           <Button >
-            <Link href="/Messages" passHref>
-            <h4 className='az'>Message</h4>
+            <Link className='az'  href="/Messages" passHref>
+        Message
             </Link>
           </Button>
           <Button >
-            <Link href="/Profile" passHref>
-            <h4 className='az'>Abzf</h4>
+            <Link className='az'  href="/Profile" passHref>
+          Abzf
             </Link>
           </Button>
           <Button >
-            <Link href="/profile" passHref>
-            <h4 className='az'>Abfezf</h4>
+            <Link className='az'  href="/profile" passHref>
+           Abfezf
             </Link>
           </Button>
         </Box>
