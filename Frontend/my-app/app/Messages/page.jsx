@@ -19,6 +19,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import Navbar from "../Navbar/page";
 
 const messages = [
   {
@@ -77,14 +78,33 @@ const StyledFab = styled(Fab)({
   right: 0,
   margin: '0 auto',
 });
-
 export default function BottomAppBar() {
+  const [inputValue, setInputValue] = React.useState('');
+  const [messages, setMessages] = React.useState(messagesData);
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handlePostMessage = () => {
+    if (inputValue.trim() !== '') {
+      const newMessage = {
+        id: messages.length + 1,
+        primary: inputValue,
+        secondary: 'New message', // You can customize this if needed
+        person: '/static/images/avatar/your-avatar.jpg', // Replace with the actual path
+      };
+      setMessages([...messages, newMessage]);
+      setInputValue('');
+    }
+  };
+
   return (
     <React.Fragment>
+      <Navbar/>
       <CssBaseline />
       <Paper square sx={{ pb: '50px' }}>
         <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
-          Inbox
         </Typography>
         <List sx={{ mb: 2 }}>
           {messages.map(({ id, primary, secondary, person }) => (
@@ -94,11 +114,7 @@ export default function BottomAppBar() {
                   Today
                 </ListSubheader>
               )}
-              {id === 3 && (
-                <ListSubheader sx={{ bgcolor: 'background.paper' }}>
-                  Yesterday
-                </ListSubheader>
-              )}
+              {/* Render other messages */}
               <ListItemButton>
                 <ListItemAvatar>
                   <Avatar alt="Profile Picture" src={person} />
@@ -114,7 +130,7 @@ export default function BottomAppBar() {
           <IconButton color="inherit" aria-label="open drawer">
             <MenuIcon />
           </IconButton>
-          <StyledFab color="secondary" aria-label="add">
+          <StyledFab color="secondary" aria-label="add" onClick={handlePostMessage}>
             <AddIcon />
           </StyledFab>
           <Box sx={{ flexGrow: 1 }} />
