@@ -52,7 +52,8 @@
     border-radius: 0.25rem; /* Rounded corners */
     color: #fff; /* White text color */
     cursor: pointer; /* Cursor style */
-    transition: background-color 0.3s; /* Smooth transition for background color */
+    transition: background-color 0.3s; 
+;/* Smooth transition for background color */
   }
   
   /* Hover effect for sign-in button */
