@@ -117,6 +117,9 @@ const SignUp = () => {
     
         <button onClick={() => router.push('/sign-in')} className="button-59 ">Sign In</button>
       </div>
+      <video id="background-video" autoPlay loop muted>
+        <source src="/khlil.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 };
