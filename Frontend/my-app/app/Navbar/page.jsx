@@ -30,8 +30,8 @@ function ResponsiveAppBar() {
             </Link>
           </Button>
           <Button >
-            <Link href="/pricing" passHref>
-            <h4 className='az'>Abfzf</h4>
+            <Link href="/Messages" passHref>
+            <h4 className='az'>Message</h4>
             </Link>
           </Button>
           <Button >
