@@ -10,6 +10,9 @@ import { useRouter } from 'next/navigation';
 import './singup.css'
 const SignUp = () => {
   const [email, setEmail] = useState('');
+  const [birth, setBirth] = useState('');
+  const [firstName, setFirst] = useState('');
+  const [lastName, setLast] = useState('')
   const [password, setPassword] = useState('');
   const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
   const [signInWithGoogle] = useSignInWithGoogle(auth);
@@ -18,11 +21,20 @@ const SignUp = () => {
 
   const handleSignUp = async () => {
     try {
+      // Password validation
+      const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/;
+      if (!passwordRegex.test(password)) {
+        alert("Password must contain at least one capital letter, one number, and one symbol (!@#$%^&*)");
+        return;
+      }
       const res = await createUserWithEmailAndPassword(email, password);
       console.log({ res });
       sessionStorage.setItem('user', true);
       setEmail('');
       setPassword('');
+      setLast('')
+      setFirst('')
+      setBirth('')
       router.push('/sign-in');
       alert("Sign up successful");
     } catch (e) {
@@ -54,7 +66,28 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div className="signup-container">
-        <h1 className="text-white text-2xl mb-5">Sign Up</h1>
+        <h1 className="khalil">Sign Up</h1>
+        <input
+          type="firstName"
+          placeholder="First Name"
+          value={firstName}
+          onChange={(e) => setFirst(e.target.value)}
+          className="input-field"
+        />
+         <input
+          type="LastName"
+          placeholder="Last Name"
+          value={lastName}
+          onChange={(e) => setLast(e.target.value)}
+          className="input-field"
+        />
+         <input
+          type="Birth"
+          placeholder="Birth"
+          value={birth}
+          onChange={(e) => setBirth(e.target.value)}
+          className="input-field"
+        />
         <input 
           type="email" 
           placeholder="Email" 
@@ -71,19 +104,22 @@ const SignUp = () => {
         />
         <button 
           onClick={handleSignUp}
-          className="signup-btn"
+          className="button-59 " 
         >
           Sign Up
         </button>
-        <button 
-          onClick={handleGoogleSignUp}
-          className="google-btn"
-        >
-          <img src="https://img.icons8.com/?size=80&id=6QtoKjRma1Cq&format=png" alt="" />
-        </button>
       
-        <button onClick={() => router.push('/sign-in')} className="signin-link">Sign In</button>
+       
+  
+    
+          <img className='ll'  onClick={handleGoogleSignUp} src="https://img.icons8.com/?size=80&id=6QtoKjRma1Cq&format=png" alt="" />
+        
+    
+        <button onClick={() => router.push('/sign-in')} className="button-59 ">Sign In</button>
       </div>
+      <video id="background-video" autoPlay loop muted>
+        <source src="/khlil.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 };
