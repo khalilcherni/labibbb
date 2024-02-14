@@ -11,7 +11,7 @@ background-color: rgb(252, 252, 252);
 }
 .signup-container {
   width: 50%;
-    background-color: #ddbc96;
+  background-color: #2d3748;
     padding: 30px;
     border-color: rgb(5, 5, 5);
     border-radius: 10px;
@@ -107,5 +107,19 @@ background-color: rgb(252, 252, 252);
     display: flex;
     justify-content: center; 
     width: 80px;
+  }
+  input[type="firstName"],
+  input[type="LastName"],
+  input[type="Birth"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%; /* Full width */
+    padding: 0.75rem; /* Padding */
+    margin-bottom: 1rem; /* Bottom margin */
+    background-color: #4a5568; /* Dark gray background */
+    border: none; /* No border */
+    border-radius: 0.25rem; /* Rounded corners */
+    outline: none; /* Remove outline */
+    color: #cbd5e0; /* Text color */
   }
   
