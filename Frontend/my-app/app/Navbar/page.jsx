@@ -62,7 +62,7 @@ function ResponsiveAppBar() {
             </Link>
           </Button>
           <Button sx={{ my: 2, color: 'white' }}>
-            <Link href="/blog" passHref>
+            <Link href="/Profile" passHref>
               Blog
             </Link>
           </Button>

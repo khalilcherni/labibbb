@@ -1,7 +1,7 @@
 /* SignUp.css */
 .min-h-screen {
   /* Set the background image */
-background-color: rgb(207, 188, 163);
+background-color: rgb(252, 252, 252);
   /* Set background size to cover the entire screen */
   background-size: cover;
   /* Center the background image */
@@ -9,21 +9,29 @@ background-color: rgb(207, 188, 163);
   /* Make sure content stays in front of the background image */
   position: relative;
 }
+.khalil{
+  color: #cbd5e0;
+}
 .signup-container {
-    background-color: #333;
+  width: 50%;
+  background-color: #2d3748;
     padding: 30px;
+    border-color: rgb(5, 5, 5);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: -50px;
+    margin-left: 350px;
+    margin-top: 30px;
   }
   
   .input-field {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    background-color: #555;
+    background-color: #c7c4c4;
     border: none;
     border-radius: 5px;
-    color: #fff;
+    color: #e2dcdc;
   }
   
   .signup-btn {
@@ -36,23 +44,49 @@ background-color: rgb(207, 188, 163);
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
+
+
+  .button-89 {
+    padding: 10px;
+    width: 100%;
+    --b: 3px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #373B44;
+    
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+      conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+      var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
   
+    border: 0;
+  
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-89:hover,
+  .button-89:focus-visible{
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+  }
+  
+  .button-89:active {
+    background: var(--color);
+    color: #fff;
+  }
   .signup-btn:hover {
     background-color: #8a8d91;
   }
   
-  .google-btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
- 
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+
 
   
   .signin-link {
@@ -70,4 +104,75 @@ background-color: rgb(207, 188, 163);
   .signin-link:hover {
     color: #bbb;
   }
+
   
+  .ll {
+    display: flex;
+    justify-content: center; 
+    width: 80px;
+  }
+  input[type="firstName"],
+  input[type="LastName"],
+  input[type="Birth"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%; /* Full width */
+    padding: 0.75rem; /* Padding */
+    margin-bottom: 1rem; /* Bottom margin */
+    background-color: #4a5568; /* Dark gray background */
+    border: none; /* No border */
+    border-radius: 0.25rem; /* Rounded corners */
+    outline: none; /* Remove outline */
+    color: #cbd5e0; /* Text color */
+  }
+  .button-59 {
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    fill: #000;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: -.8px;
+    line-height: 24px;
+    min-width: 140px;
+    outline: 0;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    padding: 10px;
+    width: 103%;
+ 
+  }
+  
+  .button-59:focus {
+    color: #171e29;
+  }
+  
+  .button-59:hover {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+  }
+  
+  .button-59:active {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+  }
+  
+  @media (min-width: 768px) {
+    .button-59 {
+      min-width: 170px;
+    }
+  }
