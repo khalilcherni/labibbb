@@ -1,77 +1,81 @@
+'use client'
 import React from 'react';
-import Navbar from "../Navbar/page";
-function Profile() {
+import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
+
+export default function EditButton() {
   return (
     <div className="gradient-custom-2" style={{ backgroundColor: '#9de2ff' }}>
-      <Navbar/>
-      <div className="py-5 h-100">
-        <div className="justify-content-center align-items-center h-100">
-          <div className="lg-9 xl-7">
-            <div className="card">
+      <MDBContainer className="py-5 h-100">
+        <MDBRow className="justify-content-center align-items-center h-100">
+          <MDBCol lg="9" xl="7">
+            <MDBCard>
               <div className="rounded-top text-white d-flex flex-row" style={{ backgroundColor: '#000', height: '200px' }}>
                 <div className="ms-4 mt-5 d-flex flex-column" style={{ width: '150px' }}>
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" alt="Generic placeholder image" className="mt-4 mb-2 img-thumbnail" style={{ width: '150px', zIndex: '1' }} />
-                  <button className="btn btn-outline-dark" style={{ height: '36px', overflow: 'visible' }}>
+                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                    alt="Generic placeholder image" className="mt-4 mb-2 img-thumbnail" fluid style={{ width: '150px', zIndex: '1' }} />
+                  <MDBBtn outline color="dark" style={{height: '36px', overflow: 'visible'}}>
                     Edit profile
-                  </button>
+                  </MDBBtn>
                 </div>
                 <div className="ms-3" style={{ marginTop: '130px' }}>
-                  <h5>Andy Horwitz</h5>
-                  <p>New York</p>
+                  <MDBTypography tag="h5">Andy Horwitz</MDBTypography>
+                  <MDBCardText>New York</MDBCardText>
                 </div>
               </div>
               <div className="p-4 text-black" style={{ backgroundColor: '#f8f9fa' }}>
                 <div className="d-flex justify-content-end text-center py-1">
                   <div>
-                    <p className="mb-1 h5">253</p>
-                    <p className="small text-muted mb-0">Photos</p>
+                    <MDBCardText className="mb-1 h5">253</MDBCardText>
+                    <MDBCardText className="small text-muted mb-0">Photos</MDBCardText>
                   </div>
                   <div className="px-3">
-                    <p className="mb-1 h5">1026</p>
-                    <p className="small text-muted mb-0">Followers</p>
+                    <MDBCardText className="mb-1 h5">1026</MDBCardText>
+                    <MDBCardText className="small text-muted mb-0">Followers</MDBCardText>
                   </div>
                   <div>
-                    <p className="mb-1 h5">478</p>
-                    <p className="small text-muted mb-0">Following</p>
+                    <MDBCardText className="mb-1 h5">478</MDBCardText>
+                    <MDBCardText className="small text-muted mb-0">Following</MDBCardText>
                   </div>
                 </div>
               </div>
-              <div className="card-body text-black p-4">
+              <MDBCardBody className="text-black p-4">
                 <div className="mb-5">
                   <p className="lead fw-normal mb-1">About</p>
                   <div className="p-4" style={{ backgroundColor: '#f8f9fa' }}>
-                    <p className="font-italic mb-1">Web Developer</p>
-                    <p className="font-italic mb-1">Lives in New York</p>
-                    <p className="font-italic mb-0">Photographer</p>
+                    <MDBCardText className="font-italic mb-1">Web Developer</MDBCardText>
+                    <MDBCardText className="font-italic mb-1">Lives in New York</MDBCardText>
+                    <MDBCardText className="font-italic mb-0">Photographer</MDBCardText>
                   </div>
                 </div>
                 <div className="d-flex justify-content-between align-items-center mb-4">
-                  <p className="lead fw-normal mb-0">Recent photos</p>
-                  <p className="mb-0"><a href="#!" className="text-muted">Show all</a></p>
+                  <MDBCardText className="lead fw-normal mb-0">Recent photos</MDBCardText>
+                  <MDBCardText className="mb-0"><a href="#!" className="text-muted">Show all</a></MDBCardText>
                 </div>
-                <div className="row">
-                  <div className="col mb-2">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp" alt="image 1" className="w-100 rounded-3" />
-                  </div>
-                  <div className="col mb-2">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp" alt="image 1" className="w-100 rounded-3" />
-                  </div>
-                </div>
-                <div className="row g-2">
-                  <div className="col mb-2">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp" alt="image 1" className="w-100 rounded-3" />
-                  </div>
-                  <div className="col mb-2">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp" alt="image 1" className="w-100 rounded-3" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                <MDBRow>
+                  <MDBCol className="mb-2">
+                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
+                      alt="image 1" className="w-100 rounded-3" />
+                  </MDBCol>
+                  <MDBCol className="mb-2">
+                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
+                      alt="image 1" className="w-100 rounded-3" />
+                  </MDBCol>
+                </MDBRow>
+                <MDBRow className="g-2">
+                  <MDBCol className="mb-2">
+                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
+                      alt="image 1" className="w-100 rounded-3" />
+                  </MDBCol>
+                  <MDBCol className="mb-2">
+                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
+                      alt="image 1" className="w-100 rounded-3" />
+                  </MDBCol>
+                </MDBRow>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
     </div>
   );
 }
-
-export default Profile;
