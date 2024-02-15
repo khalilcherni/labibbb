@@ -1,4 +1,6 @@
 /* styles.css */
+
+/* Input Styles */
 .input-container {
     position: relative;
     margin-bottom: 20px;
@@ -18,35 +20,51 @@
     border-color: #007bff;
   }
   
+  /* Message List Styles */
   .message-list {
     margin-top: 20px;
   }
   
-  .message-list .MuiListSubheader-root {
-    background-color: #f0f0f0;
+  .message-card {
+    background-color: #1f1d1d;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
   }
   
-  .message-list .MuiListItemButton-root {
-    position: relative;
+  .message-card-avatar {
+    margin-right: 20px;
   }
   
-  .message-list .MuiListItemButton-root:not(:last-child) {
-    margin-bottom: 10px;
-  }
-  
-  .message-list .MuiListItemAvatar-root {
-    margin-right: 10px;
-  }
-  
-  .message-list .MuiAvatar-root {
+  .message-card-avatar img {
     width: 50px;
     height: 50px;
+    border-radius: 50%;
   }
   
-  .message-list .MuiIconButton-root {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+  .message-card-content {
+    flex-grow: 1;
+  }
+  
+  .message-card-actions {
+    margin-left: auto;
+  }
+  
+  .message-card-actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .message-card-actions button:hover {
+    color: #ff0000;
+  }
+  
+  /* List Subheader Styles */
+  .message-list .MuiListSubheader-root {
+    background-color: #f0f0f0;
   }
   

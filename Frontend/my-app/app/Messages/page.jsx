@@ -1,4 +1,4 @@
-'use client'  
+'use client'
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -15,21 +15,16 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import Avatar from '@mui/material/Avatar';
+import Rating from '@mui/material/Rating';
 import MenuIcon from '@mui/icons-material/Menu';
 import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Navbar from "../Navbar/page";
+import "./Message.css";
 
-const messagesData = JSON.parse(localStorage.getItem('messages')) || [
-  {
-    id: 1,
-    primary: 'Brunch this week?',
-    secondary: "I'll be in the neighborhood this week. Let's grab a bite to eat",
-    person: '/static/images/avatar/5.jpg',
-  },
-];
+const messagesData = JSON.parse(localStorage.getItem('messages')) || [];
 
 const StyledFab = styled(Fab)({
   position: 'absolute',
@@ -54,8 +49,20 @@ const StyledInput = styled('input')({
   },
 });
 
+const MessageCard = styled(Paper)({
+  padding: '20px',
+  marginBottom: '20px',
+  display: 'flex',
+  alignItems: 'center',
+});
+
+const RatingContainer = styled(Box)({
+  marginLeft: 'auto',
+});
+
 export default function BottomAppBar() {
   const [inputValue, setInputValue] = React.useState('');
+  const [ratingValue, setRatingValue] = React.useState(0);
   const [messages, setMessages] = React.useState(messagesData);
 
   const handleInputChange = (event) => {
@@ -69,11 +76,13 @@ export default function BottomAppBar() {
         primary: inputValue,
         secondary: 'New message', // You can customize this if needed
         person: '/static/images/avatar/your-avatar.jpg', // Replace with the actual path
+        rating: ratingValue // Assigning the selected rating
       };
       const updatedMessages = [...messages, newMessage];
       setMessages(updatedMessages);
       localStorage.setItem('messages', JSON.stringify(updatedMessages));
       setInputValue('');
+      setRatingValue(0); // Resetting the rating after posting the message
     }
   };
 
@@ -91,28 +100,24 @@ export default function BottomAppBar() {
         <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
           Message List
         </Typography>
-        <List sx={{ mb: 2 }}>
-          {messages.map(({ id, primary, secondary, person }) => (
-            <React.Fragment key={id}>
-              {id === 1 && (
-                <ListSubheader sx={{ bgcolor: 'background.paper' }}>
-                  Today
-                </ListSubheader>
-              )}
-              <ListItemButton>
-                <ListItemAvatar>
-                  <Avatar alt="Profile Picture" src={person} />
-                </ListItemAvatar>
-                <ListItemText primary={primary} secondary={secondary} />
-                <IconButton
-                  edge="end"
-                  aria-label="delete"
-                  onClick={() => handleDeleteMessage(id)}
-                >
-                  <DeleteIcon />
-                </IconButton>
-              </ListItemButton>
-            </React.Fragment>
+        <List>
+          {messages.map(({ id, primary, secondary, person, rating }) => (
+            <MessageCard key={id}>
+              <ListItemAvatar>
+                <Avatar alt="Profile Picture" src={person} />
+              </ListItemAvatar>
+              <ListItemText primary={primary} secondary={secondary} />
+              <RatingContainer>
+                <Rating value={rating} readOnly />
+              </RatingContainer>
+              <IconButton
+                edge="end"
+                aria-label="delete"
+                onClick={() => handleDeleteMessage(id)}
+              >
+                <DeleteIcon />
+              </IconButton>
+            </MessageCard>
           ))}
         </List>
       </Paper>
@@ -121,16 +126,20 @@ export default function BottomAppBar() {
           <StyledFab color="secondary" aria-label="add" onClick={handlePostMessage}>
             <AddIcon />
           </StyledFab>
+          <Rating
+            value={ratingValue}
+            onChange={(event, newValue) => {
+              setRatingValue(newValue);
+            }}
+          />
         </Toolbar>
         {/** Input field for adding new messages */}
-        <Box sx={{ p: 2 }}>
-          <StyledInput
-            type="text"
-            placeholder="Type your message here..."
-            value={inputValue}
-            onChange={handleInputChange}
-          />
-        </Box>
+        <StyledInput
+          type="text"
+          placeholder="Type your message here..."
+          value={inputValue}
+          onChange={handleInputChange}
+        />
       </AppBar>
     </React.Fragment>
   );
