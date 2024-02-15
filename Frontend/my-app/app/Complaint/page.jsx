@@ -20,7 +20,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Navbar from "../Navbar/page";
-import "./Message.css";
+
 
 const messagesData = JSON.parse(localStorage.getItem('messages')) || [];
 
