@@ -3,12 +3,20 @@ import type { Config } from "tailwindcss"
 const config = {
   darkMode: ["class"],
   content: [
+<<<<<<< HEAD
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
 	],
   prefix: "",
+=======
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/flowbite/**/*.js"
+  ],
+>>>>>>> 811f0404a9e8f3803340d99e445440d755be76a9
   theme: {
     container: {
       center: true,
@@ -74,7 +82,15 @@ const config = {
       },
     },
   },
+<<<<<<< HEAD
   plugins: [require("tailwindcss-animate")],
 } satisfies Config
 
 export default config
+=======
+  plugins: [
+    require('flowbite/plugin')
+]
+};
+export default config;
+>>>>>>> 811f0404a9e8f3803340d99e445440d755be76a9
