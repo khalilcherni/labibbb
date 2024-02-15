@@ -34,7 +34,7 @@ function ResponsiveAppBar() {
             </Link>
           </Button>
           <Button >
-            <Link className='az' id="lll" href="/Profile" passHref>
+            <Link className='az' id="lll" href="/Statistic" passHref>
          statistic
             </Link>
           </Button>
