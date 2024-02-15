@@ -127,16 +127,18 @@
 
 /* Styling for the navigation buttons */
 .az {
-  color: #3b3636; /* Text color */
+  color: #272525; /* Text color */
   text-decoration: none; /* Remove default underline */
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  transition: color 0.3s ease;/* Smooth color transition on hover */
 }
 
 /* Styling for the navigation links on hover */
 .az:hover {
   color: #000000; /* Text color on hover */
 }
-
+.az strong {
+  font-weight: bold;
+}
 /* CSS */
 
 

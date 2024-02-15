@@ -39,7 +39,7 @@ function ResponsiveAppBar() {
             </Link>
           </Button>
           <Button >
-            <Link className='az' id="lll" href="/profile" passHref>
+            <Link className='az' id="lll" href="/Home" passHref>
           materiel  
             </Link>
           </Button>
