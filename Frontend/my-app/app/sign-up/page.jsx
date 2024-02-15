@@ -73,21 +73,21 @@ const SignUp = () => {
         {showSignUp && (
           <>
             <input
-              type="text"
-              placeholder="First Name"
+              type="firstName"
+              placeholder="firstName"
               value={firstName}
               onChange={(e) => setFirst(e.target.value)}
               className="input-field"
             />
             <input
-              type="text"
-              placeholder="Last Name"
+              type="LastName"
+              placeholder="LastName"
               value={lastName}
               onChange={(e) => setLast(e.target.value)}
               className="input-field"
             />
             <input
-              type="text"
+              type="Birth"
               placeholder="Birth"
               value={birth}
               onChange={(e) => setBirth(e.target.value)}
