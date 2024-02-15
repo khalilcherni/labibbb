@@ -1,7 +1,7 @@
 'use client'
 import React, { Component } from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
-
+import Navbar from "../Navbar/page";
 const data = [
   { name: 'Group A', value: 400 },
   { name: 'Group B', value: 300 },
@@ -16,6 +16,7 @@ export default class Example extends Component {
   render() {
     return (
       <PieChart width={800} height={400}>
+        <Navbar/>
         <Pie
           data={data}
           cx={120}
