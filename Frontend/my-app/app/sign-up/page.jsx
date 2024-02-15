@@ -92,6 +92,7 @@ const SignUp = () => {
               value={birth}
               onChange={(e) => setBirth(e.target.value)}
               className="input-field"
+          
             />
             <input 
               type="email" 

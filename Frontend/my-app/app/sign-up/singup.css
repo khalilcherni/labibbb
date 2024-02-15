@@ -119,7 +119,7 @@
     width: 100%; /* Full width */
     padding: 0.75rem; /* Padding */
     margin-bottom: 1rem; /* Bottom margin */
-    background-color: #4a5568; /* Dark gray background */
+    background-color: #8a8d91; /* Dark gray background */
     border: none; /* No border */
     border-radius: 0.25rem; /* Rounded corners */
     outline: none; /* Remove outline */
@@ -229,5 +229,6 @@
   margin-left: 500px;
   margin-top: 80px;
 }
-
-/* Rest of your CSS styles... */
+.input-field::placeholder {
+  color: white; /* Change placeholder color to white */
+}
