@@ -1,0 +1,52 @@
+/* styles.css */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .input-container input:focus {
+    border-color: #007bff;
+  }
+  
+  .message-list {
+    margin-top: 20px;
+  }
+  
+  .message-list .MuiListSubheader-root {
+    background-color: #f0f0f0;
+  }
+  
+  .message-list .MuiListItemButton-root {
+    position: relative;
+  }
+  
+  .message-list .MuiListItemButton-root:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  
+  .message-list .MuiListItemAvatar-root {
+    margin-right: 10px;
+  }
+  
+  .message-list .MuiAvatar-root {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .message-list .MuiIconButton-root {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  
