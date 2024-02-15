@@ -44,8 +44,8 @@ function ResponsiveAppBar() {
             </Link>
           </Button>
           <Button >
-            <Link className='az' id="lll" href="/posts" passHref>
-          posts 
+            <Link className='az' id="lll" href="/postsPage" passHref>
+          After&before 
             </Link>
           </Button>
         </Box>
