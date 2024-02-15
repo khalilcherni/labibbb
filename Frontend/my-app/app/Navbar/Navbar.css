@@ -1,7 +1,9 @@
 /* Navbar.css */
+
+/* Styling for the Navbar */
 .kh {
-  background-color: rgba(22, 48, 48, 0.336); /* Transparent black background */
-}
+    background-color: rgba(22, 48, 48, 0.336); /* Transparent black background */
+  }
   
   /* Styling for the logo */
   .logo {
