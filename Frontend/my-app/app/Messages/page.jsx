@@ -77,6 +77,7 @@ export default function BottomAppBar() {
         primary: inputValue,
         secondary: 'New message', // You can customize this if needed
         person: '/static/images/avatar/your-avatar.jpg', // Replace with the actual path
+        imageUrl: imageUrl, // Adding imageUrl to the message
         rating: ratingValue // Assigning the selected rating
       };
       const updatedMessages = [...messages, newMessage];
@@ -84,6 +85,7 @@ export default function BottomAppBar() {
       localStorage.setItem('messages', JSON.stringify(updatedMessages));
       setInputValue('');
       setRatingValue(0); // Resetting the rating after posting the message
+      setImageUrl(''); // Resetting the image URL after posting the message
     }
   };
 
@@ -92,9 +94,11 @@ export default function BottomAppBar() {
     setMessages(updatedMessages);
     localStorage.setItem('messages', JSON.stringify(updatedMessages));
   };
+
   const handleImageUrlChange = (event) => {
     setImageUrl(event.target.value);
   };
+
   return (
     <React.Fragment>
       <Navbar/>
@@ -104,12 +108,13 @@ export default function BottomAppBar() {
           Message List
         </Typography>
         <List>
-          {messages.map(({ id, primary, secondary, person, rating }) => (
+          {messages.map(({ id, primary, secondary, person, rating, imageUrl }) => (
             <MessageCard key={id}>
               <ListItemAvatar>
                 <Avatar alt="Profile Picture" src={person} />
               </ListItemAvatar>
               <ListItemText primary={primary} secondary={secondary} />
+              {imageUrl && <img src={imageUrl} alt="Message Image" />} {/* Display image if URL provided */}
               <RatingContainer>
                 <Rating value={rating} readOnly />
               </RatingContainer>
