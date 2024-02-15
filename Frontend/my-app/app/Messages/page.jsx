@@ -40,6 +40,20 @@ const StyledFab = styled(Fab)({
   margin: '0 auto',
 });
 
+const StyledInput = styled('input')({
+  width: '100%',
+  padding: '10px',
+  fontSize: '16px',
+  border: '1px solid #ccc',
+  borderRadius: '4px',
+  boxSizing: 'border-box',
+  marginBottom: '10px',
+  transition: '0.3s',
+  '&:focus': {
+    border: '2px solid #007bff',
+  },
+});
+
 export default function BottomAppBar() {
   const [inputValue, setInputValue] = React.useState('');
   const [messages, setMessages] = React.useState(messagesData);
@@ -104,23 +118,18 @@ export default function BottomAppBar() {
       </Paper>
       <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>
-          
           <StyledFab color="secondary" aria-label="add" onClick={handlePostMessage}>
             <AddIcon />
           </StyledFab>
-  
-        
-        
         </Toolbar>
         {/** Input field for adding new messages */}
         <Box sx={{ p: 2 }}>
-          <input
+          <StyledInput
             type="text"
             placeholder="Type your message here..."
             value={inputValue}
             onChange={handleInputChange}
           />
-      
         </Box>
       </AppBar>
     </React.Fragment>
