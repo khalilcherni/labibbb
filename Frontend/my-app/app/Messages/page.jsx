@@ -22,6 +22,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Navbar from "../Navbar/page";
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import "./Message.css";
 
 const messagesData = JSON.parse(localStorage.getItem('messages')) || [];
@@ -77,7 +78,7 @@ export default function BottomAppBar() {
         primary: inputValue,
         secondary: 'New message', // You can customize this if needed
         person: '/static/images/avatar/your-avatar.jpg', // Replace with the actual path
-        imageUrl: imageUrl, // Adding imageUrl to the message
+        imageUrl: imageUrl,
         rating: ratingValue // Assigning the selected rating
       };
       const updatedMessages = [...messages, newMessage];
@@ -97,6 +98,15 @@ export default function BottomAppBar() {
 
   const handleImageUrlChange = (event) => {
     setImageUrl(event.target.value);
+  };
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImageUrl(reader.result);
+    };
   };
 
   return (
@@ -140,6 +150,18 @@ export default function BottomAppBar() {
               setRatingValue(newValue);
             }}
           />
+          <input
+            accept="image/*"
+            style={{ display: 'none' }}
+            id="contained-button-file"
+            type="file"
+            onChange={handleImageUpload}
+          />
+          <label htmlFor="contained-button-file">
+            <IconButton component="span" aria-label="upload image">
+              <AddPhotoAlternateIcon />
+            </IconButton>
+          </label>
           <StyledInput
             type="text"
             placeholder="Enter image URL (optional)"
@@ -158,3 +180,4 @@ export default function BottomAppBar() {
     </React.Fragment>
   );
 }
+
