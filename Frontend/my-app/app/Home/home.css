@@ -1,4 +1,5 @@
 .home-page {
+    
     height: 100vh; /* Set height to full viewport height */
     /* background-image: url('https://static.vecteezy.com/ti/vecteur-libre/p3/21669884-air-l-eau-et-sol-la-pollution-par-industriel-production-environnement-la-pollution-vectoriel.jpg'); */
     background-size: cover;
@@ -43,3 +44,83 @@
 /* Add any additional styling based on your needs */
 
 /* Add more styles for your headings, paragraphs, etc. */
+.header-section {
+    background-color: #4CAF50; /* You can change the color to your preference */
+    color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .header-section h2 {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+  
+  .header-section h1 {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* About Section */
+  .about-section {
+    padding: 50px 0;
+  }
+  
+  .about-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .about-section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+  
+  /* Container Style */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 992px) {
+    .col-lg-6 {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .col-lg-6 img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .col-lg-6,
+    .col {
+      margin-bottom: 30px;
+    }
+  }
+  .col {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fs-1 {
+    font-size: 2.5rem;
+  }
+  
+  .mb-5 {
+    margin-bottom: 20px;
+  }
+  
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+  
+  .fw-bold {
+    font-weight: bold;
+  }
+  
