@@ -48,7 +48,7 @@ const SignUp = () => {
       const res = await signInWithGoogle(GoogleProvider);
       console.log({ res });
       sessionStorage.setItem('user', true);
-      router.push('/');
+      router.push('/Home');
     } catch (e) {
       console.error(e);
     }
