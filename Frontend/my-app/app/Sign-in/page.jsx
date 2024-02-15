@@ -22,7 +22,7 @@ const SignIn = () => {
       sessionStorage.setItem('user', true);
       setEmail('');
       setPassword('');
-      router.push('/');
+      router.push('/Home');
       alert("Sign in successful");
       
     } catch (e) {
@@ -37,7 +37,7 @@ const SignIn = () => {
           sessionStorage.setItem('user', true);
           setEmail('');
           setPassword('');
-          router.push('/');
+          router.push('/Home');
           alert("Sign in successful using stored credentials");
         } catch (error) {
           console.error(error);
