@@ -63,6 +63,7 @@ const RatingContainer = styled(Box)({
 export default function BottomAppBar() {
   const [inputValue, setInputValue] = React.useState('');
   const [ratingValue, setRatingValue] = React.useState(0);
+  const [imageUrl, setImageUrl] = React.useState('');
   const [messages, setMessages] = React.useState(messagesData);
 
   const handleInputChange = (event) => {
@@ -91,7 +92,9 @@ export default function BottomAppBar() {
     setMessages(updatedMessages);
     localStorage.setItem('messages', JSON.stringify(updatedMessages));
   };
-
+  const handleImageUrlChange = (event) => {
+    setImageUrl(event.target.value);
+  };
   return (
     <React.Fragment>
       <Navbar/>
@@ -131,6 +134,12 @@ export default function BottomAppBar() {
             onChange={(event, newValue) => {
               setRatingValue(newValue);
             }}
+          />
+          <StyledInput
+            type="text"
+            placeholder="Enter image URL (optional)"
+            value={imageUrl}
+            onChange={handleImageUrlChange}
           />
         </Toolbar>
         {/** Input field for adding new messages */}
