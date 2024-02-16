@@ -1,7 +1,7 @@
 import React from 'react';
 import './footer.css';
 
-const Footer = () => {
+const footer = () => {
   return (
     <footer className="footer-distributed">
       <div className="footer-left">
@@ -12,13 +12,13 @@ const Footer = () => {
           <a href="#">Recyclage</a>
           <a href="#">Services</a>
         </p>
-        <p className="footer-company-name">Recyclage Hub © 2023</p>
+        <p className="footer-company-name">Labibb Hub © 2023</p>
       </div>
 
       <div className="footer-center">
         <div>
           <i className="fa fa-map-marker"></i>
-          <p><span>Recyclage Hub</span></p>
+          <p><span>Labibb Hub</span></p>
         </div>
         <div>
           <i className="fa fa-phone"></i>
@@ -26,7 +26,7 @@ const Footer = () => {
         </div>
         <div>
           <i className="fa fa-envelope"></i>
-          <p><a href="mailto:support@company.com">support@Recyclage_Hub.com</a></p>
+          <p><a href="mailto:support@company.com">support@Labibb_Hub.com</a></p>
         </div>
       </div>
 
@@ -40,4 +40,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default footer;
