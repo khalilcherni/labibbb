@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import "../Materials/Materials.css";
-
+import Navbar from "../Navbar/page";
 const Materials = () => {
   const [isAddModalOpen, setAddModalOpen] = useState(false);
   const [materials, setMaterials] = useState([]);
@@ -73,6 +73,7 @@ const Materials = () => {
 
   return (
     <div>
+      <Navbar/>
       <h1>Materials</h1>
       <div className="materials-container">
         {materials.map((material, index) => (
