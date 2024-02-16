@@ -41,18 +41,8 @@ function ResponsiveAppBar() {
             </Link>
           </Button>
           <Button >
-            <Link className='az' id="lll" href="/Messages" passHref>
-        Feedback
-            </Link>
-          </Button>
-          <Button>
-            <Link className='az' id="lll" href="/aboutus" passHref>
-     About
-            </Link>
-          </Button>
-          <Button >
-            <Link className='az' id="lll" href="/sign-up" passHref>
-            Log out  
+            <Link className='az' id="lll" href="/Chatbot" passHref>
+        chatroom
             </Link>
           </Button>
         </Box>
