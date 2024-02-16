@@ -36,6 +36,11 @@ export default class PollutionPieChart extends Component {
           <Legend />
           <Tooltip />
         </PieChart>
+      <div>
+    <h3>Air Pollution</h3>
+    <p>Air pollution refers to the release of harmful substances into the atmosphere, resulting in adverse effects on human health and the environment.</p>
+    <h3>Water Pollution</h3>
+      </div>
       </div>
     );
   }
