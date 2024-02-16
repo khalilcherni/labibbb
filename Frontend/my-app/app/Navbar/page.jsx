@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { AppBar, Box, Toolbar, IconButton, Typography, Menu, MenuItem, Avatar, Button, Tooltip } from '@mui/material';
 import { Menu as MenuIcon, Adb as AdbIcon } from '@mui/icons-material';
-import './Navbar.css'
+ import './Navbar.css'
 
 
 function ResponsiveAppBar() {
@@ -30,17 +30,22 @@ function ResponsiveAppBar() {
           </Button>
           <Button >
             <Link className='az' id="lll" href="/Messages" passHref>
-        Message
+        Feedback
             </Link>
           </Button>
           <Button >
-            <Link className='az' id="lll" href="/Profile" passHref>
+            <Link className='az' id="lll" href="/Statistic" passHref>
          statistic
             </Link>
           </Button>
           <Button >
             <Link className='az' id="lll" href="/Home" passHref>
           materiel  
+            </Link>
+          </Button>
+          <Button >
+            <Link className='az' id="lll" href="/Complaint" passHref>
+            Complaint  
             </Link>
           </Button>
         </Box>
