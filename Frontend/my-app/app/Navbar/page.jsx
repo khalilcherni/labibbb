@@ -48,6 +48,11 @@ function ResponsiveAppBar() {
             Complaint  
             </Link>
           </Button>
+          <Button >
+            <Link className='az' id="lll" href="/sign-up" passHref>
+            Log out  
+            </Link>
+          </Button>
         </Box>
 
       </Toolbar>
