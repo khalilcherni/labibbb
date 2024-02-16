@@ -1,5 +1,5 @@
 'use client'
-'use client'
+
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -18,6 +18,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Navbar from "../Navbar/page";
 import AddIcon from '@mui/icons-material/Add';
 
+import "./Complaint.css"
 // Mock map component
 const MapComponent = ({ onClose, onSelectLocation }) => {
   // This component will be replaced with your actual map component
@@ -43,13 +44,14 @@ const StyledFab = styled(Fab)({
 });
 
 const StyledInput = styled('input')({
-  width: '100%',
+  width: '50%',
   padding: '10px',
   fontSize: '16px',
   border: '1px solid #ccc',
   borderRadius: '4px',
   boxSizing: 'border-box',
-  marginBottom: '10px',
+  marginBottom: '40px',
+  marginLeft: '300px', // Corrected spelling here
   transition: '0.3s',
   '&:focus': {
     border: '2px solid #007bff',
@@ -156,7 +158,7 @@ export default function ComplaintPage() {
           ))}
         </List>
       </Paper>
-      <AppBar position="fixed" color="inherit" sx={{ top: 'auto', bottom: 0 }}>
+      <AppBar position="fixed" color="inherit" className="AppBar" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>
           <StyledFab color="secondary" aria-label="add" onClick={handlePostMessage}>
             <AddIcon />

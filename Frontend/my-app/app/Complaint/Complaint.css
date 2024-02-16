@@ -1,0 +1,91 @@
+/* styles.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* AppBar */
+  .AppBar {
+    background-color: #ffffff;
+  }
+  
+  /* Toolbar */
+  .Toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  /* Input styles */
+  .InputBase {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+  }
+  
+  .InputBase:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Paper */
+  .Paper {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Typography */
+  .Typography {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Button */
+  .Button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .Button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* IconButton */
+  .IconButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .IconButton:hover {
+    color: #007bff;
+  }
+  
+  /* Avatar */
+  .Avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Image */
+  .Image {
+    max-width: 100%;
+    height: auto;
+  }
+  
