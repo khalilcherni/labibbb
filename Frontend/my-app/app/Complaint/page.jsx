@@ -23,7 +23,7 @@ const MapComponent = ({ onClose, onSelectLocation }) => {
   // This component will be replaced with your actual map component
   return (
     <div>
-      Map Component
+
       <button onClick={onClose}>Select Location</button>
       <button onClick={() => onSelectLocation('Selected location')}>close map </button>
   
@@ -134,9 +134,7 @@ export default function ComplaintPage() {
       <Navbar />
       <CssBaseline />
       <Paper >
-        <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
-          Complaint List
-        </Typography>
+    
         <List>
           {messages.map(({ id, primary, secondary, message, imageUrl }) => (
             <MessageCard key={id}>
@@ -156,7 +154,8 @@ export default function ComplaintPage() {
           ))}
         </List>
       </Paper>
-      <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
+      <AppBar position="fixed" color="inherit" sx={{ top: 'auto', bottom: 0 }}>
+
         <Toolbar>
           <StyledFab color="secondary" aria-label="add" onClick={handlePostMessage}>
             <AddIcon />
