@@ -18,6 +18,7 @@ CREATE SCHEMA IF NOT EXISTS `recyclage` DEFAULT CHARACTER SET utf8mb4 COLLATE ut
 USE `recyclage` ;
 
 -- -----------------------------------------------------
+
 -- Table `recyclage`.`events`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `recyclage`.`events` (
@@ -45,6 +46,14 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
+
+CREATE TABLE IF NOT EXISTS `recyclage`.`events` (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  description VARCHAR(255),
+  date INT,
+  image_url VARCHAR(2000)
+);
 
 
 -- -----------------------------------------------------

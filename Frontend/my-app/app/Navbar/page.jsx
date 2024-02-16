@@ -48,6 +48,11 @@ function ResponsiveAppBar() {
             Complaint  
             </Link>
           </Button>
+          <Button >
+            <Link className='az' id="lll" href="/Chatbot" passHref>
+        chatroom
+            </Link>
+          </Button>
         </Box>
 
       </Toolbar>
