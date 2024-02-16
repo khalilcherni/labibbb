@@ -117,9 +117,11 @@ export default function BottomAppBar() {
         <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
           Message List
         </Typography>
-        <List>
+        <hr />
+        <hr />
+        <List >
           {messages.map(({ id, primary, secondary, person, rating, imageUrl }) => (
-            <MessageCard key={id}>
+            <MessageCard  key={id}>
               <ListItemAvatar>
                 <Avatar alt="Profile Picture" src={person} />
               </ListItemAvatar>
