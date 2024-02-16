@@ -17,7 +17,7 @@ function ResponsiveAppBar() {
         <Typography
       
         >
-          <Link className='az' id="lll" href="/Home" passHref>
+          <Link className='az' id="lll" href="/home" passHref>
     Home
           </Link>
         </Typography>
@@ -39,7 +39,7 @@ function ResponsiveAppBar() {
             </Link>
           </Button>
           <Button >
-            <Link className='az' id="lll" href="/Home" passHref>
+            <Link className='az' id="lll" href="/Materials" passHref>
           materiel  
             </Link>
           </Button>
