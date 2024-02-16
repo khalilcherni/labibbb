@@ -134,7 +134,9 @@ export default function ComplaintPage() {
       <Navbar />
       <CssBaseline />
       <Paper >
-    
+        <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
+          Complaint List
+        </Typography>
         <List>
           {messages.map(({ id, primary, secondary, message, imageUrl }) => (
             <MessageCard key={id}>
@@ -155,7 +157,6 @@ export default function ComplaintPage() {
         </List>
       </Paper>
       <AppBar position="fixed" color="inherit" sx={{ top: 'auto', bottom: 0 }}>
-
         <Toolbar>
           <StyledFab color="secondary" aria-label="add" onClick={handlePostMessage}>
             <AddIcon />

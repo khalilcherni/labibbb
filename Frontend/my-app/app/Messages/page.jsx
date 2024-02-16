@@ -139,7 +139,7 @@ export default function BottomAppBar() {
           ))}
         </List>
       </Paper>
-      <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
+      <AppBar position="fixed" color="inherit" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>
           <StyledFab color="secondary" aria-label="add" onClick={handlePostMessage}>
             <AddIcon />
