@@ -45,6 +45,21 @@ function ResponsiveAppBar() {
         chatroom
             </Link>
           </Button>
+          <Button >
+            <Link className='az' id="lll" href="/Messages" passHref>
+        Feedbacks
+            </Link>
+          </Button>
+          <Button >
+            <Link className='az' id="lll" href="/aboutus" passHref>
+        About 
+            </Link>
+          </Button>
+          <Button >
+            <Link className='az' id="lll" href="/sign-up" passHref>
+            Log out  
+            </Link>
+          </Button>
         </Box>
 
       </Toolbar>

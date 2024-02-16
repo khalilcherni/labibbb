@@ -2,7 +2,7 @@
 import React,{useState} from 'react'
 import OpenAi from 'openai';
 
-
+import Navbar from '../Navbar/page';
 
 
 
@@ -41,6 +41,7 @@ function Page() {
   };
   return (
 <div className='bg-gray-100 min-h-screen flex flex-col justify-center items-center'>
+<Navbar />
  <div className='w-full max-w-md mg-white p-4 rounded-lg shadow-md'>
 <div className='mb-4'>
   <div className='text-4xl font-bold text-blue-800 mb-2 '>
