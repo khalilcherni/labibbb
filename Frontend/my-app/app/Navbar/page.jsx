@@ -23,16 +23,8 @@ function ResponsiveAppBar() {
         </Typography>
 
         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          <Button>
-            <Link className='az' id="lll" href="/aboutus" passHref>
-     About
-            </Link>
-          </Button>
-          <Button >
-            <Link className='az' id="lll" href="/Messages" passHref>
-        Feedback
-            </Link>
-          </Button>
+          
+        
           <Button >
             <Link className='az' id="lll" href="/Statistic" passHref>
          statistic
@@ -46,6 +38,16 @@ function ResponsiveAppBar() {
           <Button >
             <Link className='az' id="lll" href="/Complaint" passHref>
             Complaint  
+            </Link>
+          </Button>
+          <Button >
+            <Link className='az' id="lll" href="/Messages" passHref>
+        Feedback
+            </Link>
+          </Button>
+          <Button>
+            <Link className='az' id="lll" href="/aboutus" passHref>
+     About
             </Link>
           </Button>
           <Button >
