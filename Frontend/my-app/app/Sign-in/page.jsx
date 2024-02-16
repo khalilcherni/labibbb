@@ -64,7 +64,7 @@ const SignIn = () => {
 
 
       <div className="bg-gray-800 p-10 rounded-lg shadow-xl w-96">
-        <h1 className="text-white text-2xl mb-5">Sign In</h1>
+        <h1 className="azerty">Sign In</h1>
         <input
           type="email"
           placeholder="Email"
@@ -81,7 +81,7 @@ const SignIn = () => {
         />
         <button
           onClick={handleSignIn}
-          className="w-full p-3 bg-indigo-600 rounded text-white hover:bg-indigo-500"
+          className="button-59"
         >
           Sign In
         </button>

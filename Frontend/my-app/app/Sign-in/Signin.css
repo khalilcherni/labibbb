@@ -21,7 +21,7 @@ input[type="password"] {
   width: 100%; /* Full width */
   padding: 0.75rem; /* Padding */
   margin-bottom: 1rem; /* Bottom margin */
-  background-color: rgba(74, 85, 104, 0.5); /* Transparent dark gray background */
+  background-color: #8a8d91;  /* Transparent dark gray background */
   border: none; /* No border */
   border-radius: 0.25rem; /* Rounded corners */
   outline: none; /* Remove outline */
@@ -30,7 +30,7 @@ input[type="password"] {
 
 /* Placeholder text color */
 ::placeholder {
-  color: #a0aec0;
+  color: #ffffff;
 }
 
 /* Styling for sign-in button */
@@ -46,9 +46,7 @@ button {
 }
 
 /* Hover effect for sign-in button */
-button:hover {
-  background-color: rgba(67, 65, 144, 0.8); /* Transparent darker indigo background on hover */
-}
+
 
 /* Styling for Google sign-in button */
 .google-btn {
@@ -73,4 +71,66 @@ button:hover {
   height: 100%;
   z-index: -1; /* Ensure the video stays behind other content */
   object-fit: cover; /* Cover the entire viewport */
+}
+.button-59 {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  padding: 10px;
+  width: 103%;
+
+}
+
+.button-59:focus {
+  color: #171e29;
+}
+
+.button-59:hover {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+.button-59:active {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .button-59 {
+    min-width: 170px;
+  }
+}
+.azerty{
+  color: aliceblue;
+}
+
+.button-59,
+.signin-link {
+  background-color: rgba(102, 91, 91, 0.5); /* Transparent black background */
+}
+.input-field::placeholder {
+  color: white; /* Set the placeholder color to white */
 }
