@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS `recyclage`.`events` (
   image_url VARCHAR(2000)
 );
 
+
 -- -----------------------------------------------------
 -- Table `recyclage`.`posts`
 -- -----------------------------------------------------
