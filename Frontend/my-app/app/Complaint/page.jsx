@@ -53,6 +53,10 @@ const StyledInput = styled('input')({
   transition: '0.3s',
   '&:focus': {
     border: '2px solid #007bff',
+    boxShadow: 'none',
+  },
+  '&:not(:focus)': {
+    boxShadow: 'none',
   },
 });
 
