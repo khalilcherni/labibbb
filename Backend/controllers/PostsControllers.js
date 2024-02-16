@@ -1,62 +1,59 @@
-const db = require('./db');
+const Post = require('../models/post');
 
-// Create a post
-exports.createPost = (title, description, img1, img2, callback) => {
-  db.query(
-    'INSERT INTO posts (title, description, img1, img2) VALUES (?, ?, ?, ?)',
-    [title, description, img1, img2],
-    (err, result) => {
-      if (err) {
-        return callback(err);
-      }
-      callback(null, result.insertId);
-    }
-  );
-};
 
-// Read all posts
-exports.getAllPosts = callback => {
-  db.query('SELECT * FROM posts', (err, results) => {
+exports.createPost = (req, res) => {
+  const { title, description, img1, img2 } = req.body;
+  Post.createPost(title, description, img1, img2, (err, postId) => {
     if (err) {
-      return callback(err);
+      return res.status(500).json({ error: 'Internal Server Error' });
     }
-    callback(null, results);
+    res.status(201).json({ message: 'Post created successfully', postId });
   });
 };
 
-// Read a single post by id
-exports.getPostById = (id, callback) => {
-  db.query('SELECT * FROM posts WHERE id = ?', [id], (err, results) => {
+
+exports.getAllPosts = (req, res) => {
+  Post.getAllPosts((err, posts) => {
     if (err) {
-      return callback(err);
+      return res.status(500).json({ error: 'Internal Server Error' });
     }
-    if (results.length === 0) {
-      return callback(null, null); // No post found with that id
-    }
-    callback(null, results[0]);
+    res.json(posts);
   });
 };
 
-// Update a post
-exports.updatePost = (id, title, description, img1, img2, callback) => {
-  db.query(
-    'UPDATE posts SET title = ?, description = ?, img1 = ?, img2 = ? WHERE id = ?',
-    [title, description, img1, img2, id],
-    err => {
-      if (err) {
-        return callback(err);
-      }
-      callback(null);
+
+exports.getPostById = (req, res) => {
+  const postId = req.params.id;
+  Post.getPostById(postId, (err, post) => {
+    if (err) {
+      return res.status(500).json({ error: 'Internal Server Error' });
     }
-  );
+    if (!post) {
+      return res.status(404).json({ error: 'Post not found' });
+    }
+    res.json(post);
+  });
 };
 
-// Delete a post
-exports.deletePost = (id, callback) => {
-  db.query('DELETE FROM posts WHERE id = ?', [id], err => {
+
+exports.updatePost = (req, res) => {
+  const postId = req.params.id;
+  const { title, description, img1, img2 } = req.body;
+  Post.updatePost(postId, title, description, img1, img2, err => {
     if (err) {
-      return callback(err);
+      return res.status(500).json({ error: 'Internal Server Error' });
     }
-    callback(null);
+    res.json({ message: 'Post updated successfully' });
+  });
+};
+
+
+exports.deletePost = (req, res) => {
+  const postId = req.params.id;
+  Post.deletePost(postId, err => {
+    if (err) {
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    res.json({ message: 'Post deleted successfully' });
   });
 };
