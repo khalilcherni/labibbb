@@ -18,6 +18,22 @@ CREATE SCHEMA IF NOT EXISTS `recyclage` DEFAULT CHARACTER SET utf8mb4 COLLATE ut
 USE `recyclage` ;
 
 -- -----------------------------------------------------
+
+-- Table `recyclage`.`events`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `recyclage`.`events` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `description` VARCHAR(255) NULL DEFAULT NULL,
+  `date` INT NULL DEFAULT NULL,
+  `image_url` VARCHAR(2000) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
 -- Table `recyclage`.`materials`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `recyclage`.`materials` (
@@ -38,6 +54,20 @@ CREATE TABLE IF NOT EXISTS `recyclage`.`events` (
   date INT,
   image_url VARCHAR(2000)
 );
+
+-- -----------------------------------------------------
+-- Table `recyclage`.`posts`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `recyclage`.`posts` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(200) NOT NULL,
+  `description` TEXT NOT NULL,
+  `img1` VARCHAR(4000) NOT NULL,
+  `img2` VARCHAR(4000) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
