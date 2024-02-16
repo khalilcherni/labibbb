@@ -40,6 +40,11 @@ export default class PollutionPieChart extends Component {
     <h3>Air Pollution</h3>
     <p>Air pollution refers to the release of harmful substances into the atmosphere, resulting in adverse effects on human health and the environment.</p>
     <h3>Water Pollution</h3>
+    <p>Water pollution occurs when harmful substances contaminate bodies of water, such as rivers, lakes, and oceans, leading to negative impacts on aquatic life and human health.</p>
+    <h3>Plastic Pollution</h3>
+    <p>Plastic pollution is the accumulation of plastic waste in the environment, causing harm to wildlife, ecosystems, and human health.</p>
+    <h3>Soil Pollution</h3>
+    <p>Soil pollution involves the contamination of soil with harmful substances, such as chemicals and heavy metals, leading to degradation of soil quality and impacts on plant growth and human health.</p>
       </div>
       </div>
     );
