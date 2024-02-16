@@ -10,17 +10,24 @@ import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import Fab from '@mui/material/Fab';
 import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
 import Avatar from '@mui/material/Avatar';
-import Rating from '@mui/material/Rating';
-import MenuIcon from '@mui/icons-material/Menu';
-import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Navbar from "../Navbar/page";
+import AddIcon from '@mui/icons-material/Add';
 
+// Mock map component
+const MapComponent = ({ onClose, onSelectLocation }) => {
+  // This component will be replaced with your actual map component
+  return (
+    <div>
+      Map Component
+      <button onClick={() => onSelectLocation('Selected location')}>Select Location</button>
+      <button onClick={onClose}>Close Map</button>
+    </div>
+  );
+};
 
 const messagesData = JSON.parse(localStorage.getItem('messages')) || [];
 
@@ -54,17 +61,13 @@ const MessageCard = styled(Paper)({
   alignItems: 'center',
 });
 
-const RatingContainer = styled(Box)({
-  marginLeft: 'auto',
-});
-
 export default function ComplaintPage() {
   const [location, setLocation] = React.useState('');
   const [placeName, setPlaceName] = React.useState('');
   const [inputValue, setInputValue] = React.useState('');
-  const [ratingValue, setRatingValue] = React.useState(0);
   const [imageUrl, setImageUrl] = React.useState('');
   const [messages, setMessages] = React.useState(messagesData);
+  const [mapOpen, setMapOpen] = React.useState(false);
 
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
@@ -86,7 +89,6 @@ export default function ComplaintPage() {
         secondary: location,
         message: inputValue,
         imageUrl: imageUrl,
-        rating: ratingValue,
       };
       const updatedMessages = [...messages, newMessage];
       setMessages(updatedMessages);
@@ -94,7 +96,6 @@ export default function ComplaintPage() {
       setInputValue('');
       setLocation('');
       setPlaceName('');
-      setRatingValue(0);
       setImageUrl('');
     }
   };
@@ -109,34 +110,35 @@ export default function ComplaintPage() {
     setImageUrl(event.target.value);
   };
 
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      setImageUrl(reader.result);
-    };
+  const handleMapOpen = () => {
+    setMapOpen(true);
+  };
+
+  const handleMapClose = () => {
+    window.open('https://maps.app.goo.gl/5JoVvpuJgZyR9yyF6', '_blank');
+  };
+
+  const handleSelectLocation = (location) => {
+    setLocation(location); // Set the selected location
+    setMapOpen(false);
   };
 
   return (
     <React.Fragment>
       <Navbar />
       <CssBaseline />
-      <Paper square sx={{ pb: '50px' }}>
+      <Paper >
         <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
           Complaint List
         </Typography>
         <List>
-          {messages.map(({ id, primary, secondary, message, imageUrl, rating }) => (
+          {messages.map(({ id, primary, secondary, message, imageUrl }) => (
             <MessageCard key={id}>
               <ListItemAvatar>
                 <Avatar alt="Profile Picture" src="/static/images/avatar/your-avatar.jpg" />
               </ListItemAvatar>
               <ListItemText primary={primary} secondary={secondary} />
               {imageUrl && <img src={imageUrl} alt="Complaint Image" />}
-              <RatingContainer>
-                <Rating value={rating} readOnly />
-              </RatingContainer>
               <IconButton
                 edge="end"
                 aria-label="delete"
@@ -153,24 +155,13 @@ export default function ComplaintPage() {
           <StyledFab color="secondary" aria-label="add" onClick={handlePostMessage}>
             <AddIcon />
           </StyledFab>
-          <Rating
-            value={ratingValue}
-            onChange={(event, newValue) => {
-              setRatingValue(newValue);
-            }}
-          />
-          <input
-            accept="image/*"
-            style={{ display: 'none' }}
-            id="contained-button-file"
-            type="file"
-            onChange={handleImageUpload}
-          />
-          <label htmlFor="contained-button-file">
-            <IconButton component="span" aria-label="upload image">
-              <AddIcon />
-            </IconButton>
-          </label>
+          <IconButton
+            component="span"
+            aria-label="open map"
+            onClick={handleMapOpen}
+          >
+            <AddIcon />
+          </IconButton>
           <StyledInput
             type="text"
             placeholder="Enter image URL (optional)"
@@ -197,6 +188,7 @@ export default function ComplaintPage() {
           onChange={handleInputChange}
         />
       </AppBar>
+      {mapOpen && <MapComponent onClose={handleMapClose} onSelectLocation={handleSelectLocation} />}
     </React.Fragment>
   );
 }
