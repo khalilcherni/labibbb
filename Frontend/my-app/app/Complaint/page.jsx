@@ -1,12 +1,15 @@
 'use client'
+'use client'
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
+import Fab from '@mui/material/Fab';
 import List from '@mui/material/List';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
@@ -14,7 +17,6 @@ import Avatar from '@mui/material/Avatar';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Navbar from "../Navbar/page";
 import AddIcon from '@mui/icons-material/Add';
-import Fab from '@mui/material/Fab';
 
 // Mock map component
 const MapComponent = ({ onClose, onSelectLocation }) => {
@@ -22,8 +24,9 @@ const MapComponent = ({ onClose, onSelectLocation }) => {
   return (
     <div>
       Map Component
-      <button onClick={() => onSelectLocation('Selected location')}>Select Location</button>
-      <button onClick={onClose}>Close Map</button>
+      <button onClick={onClose}>Select Location</button>
+      <button onClick={() => onSelectLocation('Selected location')}>close map </button>
+  
     </div>
   );
 };
@@ -114,11 +117,11 @@ export default function ComplaintPage() {
   };
 
   const handleMapClose = () => {
-    setMapOpen(false);
+    window.open('https://maps.app.goo.gl/5JoVvpuJgZyR9yyF6', '_blank');
   };
 
   const handleSelectLocation = (location) => {
-    // Don't set the location here, just close the map
+    setLocation(location); // Set the selected location
     setMapOpen(false);
   };
 
@@ -191,3 +194,4 @@ export default function ComplaintPage() {
     </React.Fragment>
   );
 }
+
