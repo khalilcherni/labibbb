@@ -6,6 +6,7 @@
     background-position: center;
     display: flex;
     flex-direction: column;
+    
 }
 
 .header-section {
@@ -45,11 +46,11 @@
 
 /* Add more styles for your headings, paragraphs, etc. */
 .header-section {
-    background-color: #4CAF50; /* You can change the color to your preference */
+    background-color:  #4CAF50;/* You can change the color to your preference */
     color: black;
     padding: 50px 0;
     text-align: center;
-    height: 8vh;
+    height: 11vh;
   }
   
   .header-section h2 {

@@ -36,19 +36,6 @@ const StyledFab = styled(Fab)({
   margin: '0 auto',
 });
 
-const StyledInput = styled('input')({
-  width: '100%',
-  padding: '10px',
-  fontSize: '16px',
-  border: '1px solid #ccc',
-  borderRadius: '4px',
-  boxSizing: 'border-box',
-  marginBottom: '10px',
-  transition: '0.3s',
-  '&:focus': {
-    border: '2px solid #007bff',
-  },
-});
 
 const MessageCard = styled(Paper)({
   padding: '20px',
@@ -114,12 +101,13 @@ export default function BottomAppBar() {
       <Navbar/>
       <CssBaseline />
       <Paper square sx={{ pb: '50px' }}>
-        <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
-          Message List
+        <Typography variant="h5" className='khj' gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
+      
         </Typography>
-        <List>
+       
+ 
           {messages.map(({ id, primary, secondary, person, rating, imageUrl }) => (
-            <MessageCard key={id}>
+            <MessageCard  key={id}>
               <ListItemAvatar>
                 <Avatar alt="Profile Picture" src={person} />
               </ListItemAvatar>
@@ -137,10 +125,10 @@ export default function BottomAppBar() {
               </IconButton>
             </MessageCard>
           ))}
-        </List>
+     
       </Paper>
       <AppBar position="fixed" color="inherit" sx={{ top: 'auto', bottom: 0 }}>
-        <Toolbar>
+      
           <StyledFab color="secondary" aria-label="add" onClick={handlePostMessage}>
             <AddIcon />
           </StyledFab>
@@ -162,20 +150,20 @@ export default function BottomAppBar() {
               <AddPhotoAlternateIcon />
             </IconButton>
           </label> */}
-          <StyledInput
+        <input className='hasni'
             type="text"
             placeholder="Enter image URL (optional)"
             value={imageUrl}
             onChange={handleImageUrlChange}
-          />
-        </Toolbar>
+            /> 
+        
         {/** Input field for adding new messages */}
-        <StyledInput
+        <input className='hasni'
           type="text"
           placeholder="Type your message here..."
           value={inputValue}
           onChange={handleInputChange}
-        />
+          /> 
       </AppBar>
     </React.Fragment>
   );
