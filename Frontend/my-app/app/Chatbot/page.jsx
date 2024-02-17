@@ -15,19 +15,22 @@ function Page() {
   const [userInput, setUserInput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
   const handleUserInput = async () => {
     setIsLoading(true);
-
+  
     try {
       const updatedChatHistory = [...chatHistory, { role: 'user', content: userInput }];
       setChatHistory(updatedChatHistory);
-
+  
       const chatCompletion = await openai.chat.completion.create({
-        messages: [...updatedChatHistory, { role: 'assistant', content: userInput }],
+        messages: updatedChatHistory,
         model: 'gpt-3.5-turbo',
       });
-
+  
+      if (!chatCompletion.choices || chatCompletion.choices.length === 0) {
+        throw new Error('No response from OpenAI API');
+      }
+  
       setChatHistory((prev) => [
         ...prev,
         { role: 'assistant', content: chatCompletion.choices[0].message.content },
@@ -38,7 +41,8 @@ function Page() {
       setUserInput('');
       setIsLoading(false);
     }
-  };
+  };  
+  
   return (
 <div className='bg-gray-100 min-h-screen flex flex-col justify-center items-center'>
 <Navbar />
