@@ -1,12 +1,8 @@
 'use client'
-import React, { useState } from 'react';
+import React,{useState} from 'react'
 import OpenAi from 'openai';
+
 import Navbar from '../Navbar/page';
-
-const openai = new OpenAi({
-  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true,
-
 
 
 
@@ -22,31 +18,20 @@ function Page() {
 
   const handleUserInput = async () => {
     setIsLoading(true);
-  
+
     try {
       const updatedChatHistory = [...chatHistory, { role: 'user', content: userInput }];
       setChatHistory(updatedChatHistory);
-  
-      const prompt = updatedChatHistory.map(message => `${message.role}: ${message.content}`).join('\n');
-  
-      const response = await openai.Completion.create({
-        engine: 'text-davinci-003', // You can experiment with different engines
-        prompt,
-        max_tokens: 1000,
-        n: 1,
-        stop: null,
+
+      const chatCompletion = await openai.chat.completion.create({
+        messages: [...updatedChatHistory, { role: 'assistant', content: userInput }],
+        model: 'gpt-3.5-turbo',
       });
-  
-      // Check if response.choices is defined and has at least one item
-      if (response.choices && response.choices.length > 0) {
-        const assistantResponse = response.choices[0].text;
-        setChatHistory((prev) => [
-          ...prev,
-          { role: 'assistant', content: assistantResponse },
-        ]);
-      } else {
-        console.error('No valid response received from the chatbot.');
-      }
+
+      setChatHistory((prev) => [
+        ...prev,
+        { role: 'assistant', content: chatCompletion.choices[0].message.content },
+      ]);
     } catch (error) {
       console.error('Error during chat completion:', error);
     } finally {
@@ -54,9 +39,6 @@ function Page() {
       setIsLoading(false);
     }
   };
-  
-  
-
   return (
 <div className='bg-gray-100 min-h-screen flex flex-col justify-center items-center'>
 <Navbar />
@@ -75,7 +57,37 @@ function Page() {
     <div className={`rounded-full p-2 max-w-md mx-4 inline-block${message.role === 'user' ? ' bg-blue-300 text-blue-800' : ' bg-green-300 text-green-800'}`}>
       {message.role === 'user' ? 'you' : 'Assistant'}
     </div>
-  );
-}
+    <div className={`max-w-md mx-4 my-2 inline-block${message.role === 'user' ? ' bg-blue-100 text-blue-800' : ' bg-green-100 text-green-800'} p-2 rounded-md`}>
+      {message.content}
+    </div>
+  </div>
+))}
+ </div>
+ <div className='flex'>
+ <input
+ type="text"
+ placeholder='Ask your question'
+ value={userInput}
+ onChange={(e)=>setUserInput(e.target.value)}
+ className='flex-1 p-2 rounded-l-lg'
+ />
+ {isLoading ? (
+  <div className=' bg-blue-500 text-white p-2 rounded-r-lg animate-pulse'>
+    Loading...
 
+  </div>
+ ):(
+  <button
+  onClick={handleUserInput}
+  className='bg-blue-500 text-white p-2 rounded-r-lg hover:bg-blue-600'>
+   ask 
+  </button>
+ )}
+ 
+
+ </div>
+  </div>
+  )
+}
 export default Page;
+
