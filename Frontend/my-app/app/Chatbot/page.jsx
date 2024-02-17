@@ -1,7 +1,7 @@
 'use client'
 import React,{useState} from 'react'
 import OpenAi from 'openai';
-
+import './chat.css'
 import Navbar from '../Navbar/page';
 
 
