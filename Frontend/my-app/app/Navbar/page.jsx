@@ -36,6 +36,11 @@ function ResponsiveAppBar() {
             </Link>
           </Button>
           <Button >
+            <Link className='az' id="lll" href="/Event" passHref>
+          Event 
+            </Link>
+          </Button>
+          <Button >
             <Link className='az' id="lll" href="/Complaint" passHref>
             Complaint  
             </Link>
