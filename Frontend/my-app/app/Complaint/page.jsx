@@ -137,8 +137,7 @@ export default function ComplaintPage() {
       <CssBaseline />
       <Paper >
         <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
-          Complaint List
-        </Typography>
+                </Typography>
         <List>
           {messages.map(({ id, primary, secondary, message, imageUrl }) => (
             <MessageCard key={id}>
