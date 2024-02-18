@@ -196,6 +196,7 @@ export default function ComplaintPage() {
         />
       </AppBar>
       {mapOpen && <MapComponent onClose={handleMapClose} onSelectLocation={handleSelectLocation} />}
+   
     </React.Fragment>
   );
 }
