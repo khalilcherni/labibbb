@@ -1,23 +1,26 @@
 const Event = require('../models/eventModel');
 
-exports.create = async (req, res) => {
-    try {
-      const { image_url } = req.body;
-      const id = await Event.create(image_url);
-      res.status(201).json({ id });
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: 'Internal server error' });
-    }
-  };
+module.exports={
+  getAllevents: (req, res) => {
+    Event.getAll((err, eventss) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.json(eventss);
+      }
+    });
+  },
+  addOneevent: (req, res) => {
+    const event = req.body;
+    Event.addOne(event, (err, results) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.json(results);
+      }
+    });
+  }
+}
   
 
-exports.getAll = async (req, res) => {
-  try {
-    const events = await Event.getAll();
-    res.json(events);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-};
+

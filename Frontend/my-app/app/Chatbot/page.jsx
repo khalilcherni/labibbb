@@ -21,10 +21,10 @@ function Page() {
     try {
       const updatedChatHistory = [...chatHistory, { role: 'user', content: userInput }];
       setChatHistory(updatedChatHistory);
-  
-      const chatCompletion = await openai.chat.completion.create({
-        messages: updatedChatHistory,
+  console.log(openai)
+      const chatCompletion = await openai.ChatCompletion.create({
         model: 'gpt-3.5-turbo',
+        messages: updatedChatHistory,
       });
   
       if (!chatCompletion.choices || chatCompletion.choices.length === 0) {
