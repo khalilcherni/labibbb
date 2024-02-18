@@ -80,6 +80,7 @@ export default class PollutionPieChart extends Component {
             </CardContent>
           </Card>
         </div>
+      
       </div>
     );
   }

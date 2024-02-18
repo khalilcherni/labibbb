@@ -51,6 +51,11 @@ function ResponsiveAppBar() {
             </Link>
           </Button>
           <Button >
+            <Link className='az' id="lll" href="/postsPage" passHref>
+        Posts
+            </Link>
+          </Button>
+          <Button >
             <Link className='az' id="lll" href="/Messages" passHref>
         Feedbacks
             </Link>

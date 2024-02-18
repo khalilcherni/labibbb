@@ -1,7 +1,8 @@
 
 'use client'
 import React, { useState, useEffect } from 'react';
-
+import Navbar from "../Navbar/page";
+import "./Event.css"
 const EventForm = () => {
   const [file, setFile] = useState(null);
   const [images, setImages] = useState([]);
@@ -71,6 +72,7 @@ const EventForm = () => {
 
   return (
     <div>
+      <Navbar/>
       <input
         type="file"
         onChange={handleFileChange}
@@ -83,6 +85,7 @@ const EventForm = () => {
           <img className='imgg' key={index} src={image.image_url} alt={`Uploaded ${index}`} />
         ))}
       </div>
+     
     </div>
   );
 };
