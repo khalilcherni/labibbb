@@ -1,6 +1,6 @@
 import React from 'react';
 import './Posts.css';
-
+import Navbar from "../Navbar/page";
 const Posts = () => {
   const posts = [
     {
@@ -19,6 +19,7 @@ const Posts = () => {
 
   return (
     <div className="posts">
+      <Navbar/>
       {posts.map((post, index) => (
         <div key={index} className="post">
           <div className="left-column">
