@@ -1,7 +1,7 @@
 'use client'
 import React,{useState} from 'react'
 import OpenAi from 'openai';
-import './chat.css'
+
 import Navbar from '../Navbar/page';
 
 
@@ -15,22 +15,19 @@ function Page() {
   const [userInput, setUserInput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
   const handleUserInput = async () => {
     setIsLoading(true);
-  
+
     try {
       const updatedChatHistory = [...chatHistory, { role: 'user', content: userInput }];
       setChatHistory(updatedChatHistory);
-  console.log(openai)
-      const chatCompletion = await openai.ChatCompletion.create({
+
+      const chatCompletion = await openai.chat.completion.create({
+        messages: [...updatedChatHistory, { role: 'assistant', content: userInput }],
         model: 'gpt-3.5-turbo',
-        messages: updatedChatHistory,
       });
-  
-      if (!chatCompletion.choices || chatCompletion.choices.length === 0) {
-        throw new Error('No response from OpenAI API');
-      }
-  
+
       setChatHistory((prev) => [
         ...prev,
         { role: 'assistant', content: chatCompletion.choices[0].message.content },
@@ -41,8 +38,7 @@ function Page() {
       setUserInput('');
       setIsLoading(false);
     }
-  };  
-  
+  };
   return (
 <div className='bg-gray-100 min-h-screen flex flex-col justify-center items-center'>
 <Navbar />
