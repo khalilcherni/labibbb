@@ -80,6 +80,9 @@ export default class PollutionPieChart extends Component {
             </CardContent>
           </Card>
         </div>
+        <video id="background-video" autoPlay loop muted>
+        <source src="/aze.mp4" type="video/mp4" />
+      </video>
       </div>
     );
   }
