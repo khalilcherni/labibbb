@@ -8,7 +8,7 @@ const router = express.Router();
 router.use(cors());
 
 
-router.post('/add', eventController.create);
-router.get('/get', eventController.getAll);
+router.post('/add', eventController.addOneevent);
+router.get('/get', eventController.getAllevents);
 
 module.exports = router;
