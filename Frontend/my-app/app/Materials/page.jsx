@@ -17,7 +17,7 @@ const Materials = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/materials/get');
+      const response = await fetch('http://localhost:8080/materials/get');
       const data = await response.json();
       setMaterials(data);
     } catch (error) {
@@ -34,7 +34,7 @@ const Materials = () => {
 
   const handleAddMaterial = async () => {
     try {
-      await fetch('http://localhost:3000/materials/add', {
+      await fetch('http://localhost:8080/materials/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const Materials = () => {
 
   const handleDeleteMaterial = async (id) => {
     try {
-      await fetch(`http://localhost:3000/materials/delete/${id}`, {
+      await fetch(`http://localhost:8080/materials/delete/${id}`, {
         method: 'DELETE',
       });
       fetchData();
