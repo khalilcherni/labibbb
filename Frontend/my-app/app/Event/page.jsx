@@ -1,7 +1,8 @@
 
 'use client'
 import React, { useState, useEffect } from 'react';
-
+import Navbar from "../Navbar/page";
+import "./Event.css"
 const EventForm = () => {
   const [file, setFile] = useState(null);
   const [images, setImages] = useState([]);
@@ -12,7 +13,7 @@ const EventForm = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await fetch('http://localhost:3000/events/get');
+      const response = await fetch('http://localhost:8080/events/get');
       const data = await response.json();
       setImages(data);
     } catch (error) {
@@ -47,7 +48,7 @@ const EventForm = () => {
       console.log("Image uploaded successfully:", uploadData);
 
       // Send image URL to your server
-      const serverResponse = await fetch('http://localhost:3000/events/add', {
+      const serverResponse = await fetch('http://localhost:8080/events/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -71,6 +72,7 @@ const EventForm = () => {
 
   return (
     <div>
+      <Navbar/>
       <input
         type="file"
         onChange={handleFileChange}
@@ -83,6 +85,7 @@ const EventForm = () => {
           <img className='imgg' key={index} src={image.image_url} alt={`Uploaded ${index}`} />
         ))}
       </div>
+     
     </div>
   );
 };

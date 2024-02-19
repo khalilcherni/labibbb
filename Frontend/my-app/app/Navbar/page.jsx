@@ -36,6 +36,11 @@ function ResponsiveAppBar() {
             </Link>
           </Button>
           <Button >
+            <Link className='az' id="lll" href="/Event" passHref>
+          Event 
+            </Link>
+          </Button>
+          <Button >
             <Link className='az' id="lll" href="/Complaint" passHref>
             Complaint  
             </Link>
@@ -43,6 +48,11 @@ function ResponsiveAppBar() {
           <Button >
             <Link className='az' id="lll" href="/Chatbot" passHref>
         chatroom
+            </Link>
+          </Button>
+          <Button >
+            <Link className='az' id="lll" href="/postsPage" passHref>
+        Posts
             </Link>
           </Button>
           <Button >
