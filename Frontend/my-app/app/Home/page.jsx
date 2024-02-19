@@ -15,7 +15,7 @@ const Home = () => {
             <div className='col-12'>
               <h2 className='mb-0 text-black fw-bold'>Welcome To</h2>
               <h1 className='mb-5 text-black fw-bold text-center text-sm-start'>
-                Recycling Hub
+                labibb Hub
               </h1>
             </div>
           </div>

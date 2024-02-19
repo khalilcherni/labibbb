@@ -39,7 +39,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS `recyclage`.`materials` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `image` VARCHAR(45) NULL DEFAULT NULL,
+  `image` VARCHAR(100000) NULL DEFAULT NULL,
   `description` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB

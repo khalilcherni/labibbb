@@ -1,0 +1,36 @@
+/* Event.css */
+
+/* Common styles */
+.container-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .imgg {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px;
+  }
+  
+  .btn {
+    cursor: pointer;
+  }
+  
+  /* EventForm specific styles */
+  .input-file {
+    margin-top: 10px;
+  }
+  
+  .btn-upload {
+    margin: 10px;
+  }
+  
+  /* EventsPage specific styles */
+  h1 {
+    text-align: center;
+    margin: 20px;
+  }
+  

@@ -45,17 +45,24 @@ function ResponsiveAppBar() {
             Complaint  
             </Link>
           </Button>
-          <Button >
-            <Link className='az' id="lll" href="/Chatbot" passHref>
-        chatroom
-            </Link>
-          </Button>
+          
           <Button >
             <Link className='az' id="lll" href="/postsPage" passHref>
         Posts
             </Link>
           </Button>
           <Button >
+            <Link className='az' id="lll" href="/aaa" passHref>
+        recycling products
+            </Link>
+          </Button>
+          <Button >
+            <Link className='az' id="lll" href="/bb" passHref>
+        recycling products
+            </Link>
+          </Button>
+          <Button >
+            
             <Link className='az' id="lll" href="/Messages" passHref>
         Feedbacks
             </Link>
